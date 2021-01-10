@@ -32,9 +32,9 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Please allow us to access your location</string>
+	<string>Please allow us to access your location to find jobs near you</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Please allow us to access your location</string>
+	<string>Please allow us to access your location to find jobs near you</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
