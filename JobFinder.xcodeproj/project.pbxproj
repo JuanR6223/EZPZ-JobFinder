@@ -1,0 +1,873 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1801CDD524CE159A002733D7 /* MainJobsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1801CDD424CE159A002733D7 /* MainJobsPage.swift */; };
+		1801CDD724CE3198002733D7 /* YourProfilePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1801CDD624CE3198002733D7 /* YourProfilePage.swift */; };
+		1801CDD924CE36B1002733D7 /* GetInformedPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1801CDD824CE36B1002733D7 /* GetInformedPage.swift */; };
+		1801CE1D24D1192F002733D7 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1801CE1C24D1192F002733D7 /* Login.swift */; };
+		186C3D5424C097B900AC13C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186C3D5324C097B900AC13C1 /* AppDelegate.swift */; };
+		186C3D5624C097B900AC13C1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186C3D5524C097B900AC13C1 /* SceneDelegate.swift */; };
+		186C3D5824C097B900AC13C1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186C3D5724C097B900AC13C1 /* ViewController.swift */; };
+		186C3D5B24C097B900AC13C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 186C3D5924C097B900AC13C1 /* Main.storyboard */; };
+		186C3D5D24C097B900AC13C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 186C3D5C24C097B900AC13C1 /* Assets.xcassets */; };
+		186C3D6024C097B900AC13C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 186C3D5E24C097B900AC13C1 /* LaunchScreen.storyboard */; };
+		186C3D6B24C097B900AC13C1 /* JobFinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186C3D6A24C097B900AC13C1 /* JobFinderTests.swift */; };
+		186C3D7624C097B900AC13C1 /* JobFinderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186C3D7524C097B900AC13C1 /* JobFinderUITests.swift */; };
+		1A35FE7C37EC528DAB56E684 /* Pods_JobFinder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24C51DF761C8C73C7E45C5D5 /* Pods_JobFinder.framework */; };
+		3F7FFE1025A8164A00B26461 /* SearchBarTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7FFE0F25A8164A00B26461 /* SearchBarTestViewController.swift */; };
+		3FB55410255CAB7600FACDB6 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB5540F255CAB7600FACDB6 /* ProfileTableViewController.swift */; };
+		75EAE7A1E0F2CFC6362B2000 /* Pods_JobFinderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 416FC9B9C22ACBCCFDAD8A84 /* Pods_JobFinderTests.framework */; };
+		C0F856A24837AB69FEF271CC /* Pods_JobFinder_JobFinderUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDE416418368A335316315AE /* Pods_JobFinder_JobFinderUITests.framework */; };
+		F852AA912567448100856F93 /* SignInTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F852AA902567448100856F93 /* SignInTestViewController.swift */; };
+		F852AA98256AC41500856F93 /* JobsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F852AA96256AC41500856F93 /* JobsCollectionViewCell.swift */; };
+		F852AA9D256ED92900856F93 /* OrganizationsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F852AA9C256ED92900856F93 /* OrganizationsCollectionViewCell.swift */; };
+		F852AA9F256EDB0700856F93 /* OrganizationClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F852AA9E256EDB0700856F93 /* OrganizationClass.swift */; };
+		F867DD2925776D49000A14C9 /* OrganizationsDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F867DD2825776D49000A14C9 /* OrganizationsDetailTableViewController.swift */; };
+		F867DD81258BDA3B000A14C9 /* BusinessTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F867DD80258BDA3A000A14C9 /* BusinessTableViewController.swift */; };
+		F867DD83258BDA44000A14C9 /* JobsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F867DD82258BDA44000A14C9 /* JobsViewController.swift */; };
+		F867DD85258BDA52000A14C9 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F867DD84258BDA52000A14C9 /* NetworkManager.swift */; };
+		F867DD87258BDC6D000A14C9 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = F867DD86258BDC6D000A14C9 /* Response.swift */; };
+		F867DD89258BE109000A14C9 /* ClusterAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F867DD88258BE109000A14C9 /* ClusterAnnotationView.swift */; };
+		F867DD8B258BE112000A14C9 /* CycleAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F867DD8A258BE112000A14C9 /* CycleAnnotationView.swift */; };
+		F867DD8D258C0E8C000A14C9 /* DetailMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F867DD8C258C0E8B000A14C9 /* DetailMapViewController.swift */; };
+		F867DD8F258C0FE8000A14C9 /* ClusterDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F867DD8E258C0FE8000A14C9 /* ClusterDetailTableViewController.swift */; };
+		F867DD91258D56D2000A14C9 /* ResumeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F867DD90258D56D1000A14C9 /* ResumeViewController.swift */; };
+		F8CD3599255E6E960035F699 /* WalgreensJobsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CD3598255E6E960035F699 /* WalgreensJobsTableViewController.swift */; };
+		F8CD359B2565B8240035F699 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F8CD359A2565B8240035F699 /* GoogleService-Info.plist */; };
+		F8CD359F256640EE0035F699 /* JobClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CD359E256640EE0035F699 /* JobClass.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		186C3D6724C097B900AC13C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 186C3D4824C097B900AC13C1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 186C3D4F24C097B900AC13C1;
+			remoteInfo = JobFinder;
+		};
+		186C3D7224C097B900AC13C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 186C3D4824C097B900AC13C1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 186C3D4F24C097B900AC13C1;
+			remoteInfo = JobFinder;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1801CDD424CE159A002733D7 /* MainJobsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainJobsPage.swift; sourceTree = "<group>"; };
+		1801CDD624CE3198002733D7 /* YourProfilePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourProfilePage.swift; sourceTree = "<group>"; };
+		1801CDD824CE36B1002733D7 /* GetInformedPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetInformedPage.swift; sourceTree = "<group>"; };
+		1801CE1C24D1192F002733D7 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		186C3D5024C097B900AC13C1 /* EZPZ: JobFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EZPZ: JobFinder.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		186C3D5324C097B900AC13C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		186C3D5524C097B900AC13C1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		186C3D5724C097B900AC13C1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		186C3D5A24C097B900AC13C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		186C3D5C24C097B900AC13C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		186C3D5F24C097B900AC13C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		186C3D6124C097B900AC13C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		186C3D6624C097B900AC13C1 /* JobFinderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JobFinderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		186C3D6A24C097B900AC13C1 /* JobFinderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobFinderTests.swift; sourceTree = "<group>"; };
+		186C3D6C24C097B900AC13C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		186C3D7124C097B900AC13C1 /* JobFinderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JobFinderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		186C3D7524C097B900AC13C1 /* JobFinderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobFinderUITests.swift; sourceTree = "<group>"; };
+		186C3D7724C097B900AC13C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		24198C9EA14B7507BE4140DD /* Pods-JobFinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JobFinder.release.xcconfig"; path = "Target Support Files/Pods-JobFinder/Pods-JobFinder.release.xcconfig"; sourceTree = "<group>"; };
+		24C51DF761C8C73C7E45C5D5 /* Pods_JobFinder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JobFinder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E6ABFD7996F98FBFF3C22EF /* Pods-JobFinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JobFinder.debug.xcconfig"; path = "Target Support Files/Pods-JobFinder/Pods-JobFinder.debug.xcconfig"; sourceTree = "<group>"; };
+		3F7FFE0F25A8164A00B26461 /* SearchBarTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarTestViewController.swift; sourceTree = "<group>"; };
+		3FB5540F255CAB7600FACDB6 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
+		416FC9B9C22ACBCCFDAD8A84 /* Pods_JobFinderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JobFinderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B69CDF85FE266A11907BD6E /* Pods-JobFinderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JobFinderTests.release.xcconfig"; path = "Target Support Files/Pods-JobFinderTests/Pods-JobFinderTests.release.xcconfig"; sourceTree = "<group>"; };
+		8360A43DE654303E0D90C2C0 /* Pods-JobFinderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JobFinderTests.debug.xcconfig"; path = "Target Support Files/Pods-JobFinderTests/Pods-JobFinderTests.debug.xcconfig"; sourceTree = "<group>"; };
+		BBC23173304FBB3A90988887 /* Pods-JobFinder-JobFinderUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JobFinder-JobFinderUITests.release.xcconfig"; path = "Target Support Files/Pods-JobFinder-JobFinderUITests/Pods-JobFinder-JobFinderUITests.release.xcconfig"; sourceTree = "<group>"; };
+		EDAAE486766DF5F65846A854 /* Pods-JobFinder-JobFinderUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JobFinder-JobFinderUITests.debug.xcconfig"; path = "Target Support Files/Pods-JobFinder-JobFinderUITests/Pods-JobFinder-JobFinderUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		EDE416418368A335316315AE /* Pods_JobFinder_JobFinderUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JobFinder_JobFinderUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F852AA902567448100856F93 /* SignInTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInTestViewController.swift; sourceTree = "<group>"; };
+		F852AA96256AC41500856F93 /* JobsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsCollectionViewCell.swift; sourceTree = "<group>"; };
+		F852AA9C256ED92900856F93 /* OrganizationsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationsCollectionViewCell.swift; sourceTree = "<group>"; };
+		F852AA9E256EDB0700856F93 /* OrganizationClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationClass.swift; sourceTree = "<group>"; };
+		F867DD2825776D49000A14C9 /* OrganizationsDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationsDetailTableViewController.swift; sourceTree = "<group>"; };
+		F867DD80258BDA3A000A14C9 /* BusinessTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessTableViewController.swift; sourceTree = "<group>"; };
+		F867DD82258BDA44000A14C9 /* JobsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobsViewController.swift; sourceTree = "<group>"; };
+		F867DD84258BDA52000A14C9 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		F867DD86258BDC6D000A14C9 /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		F867DD88258BE109000A14C9 /* ClusterAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClusterAnnotationView.swift; sourceTree = "<group>"; };
+		F867DD8A258BE112000A14C9 /* CycleAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CycleAnnotationView.swift; sourceTree = "<group>"; };
+		F867DD8C258C0E8B000A14C9 /* DetailMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMapViewController.swift; sourceTree = "<group>"; };
+		F867DD8E258C0FE8000A14C9 /* ClusterDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClusterDetailTableViewController.swift; sourceTree = "<group>"; };
+		F867DD90258D56D1000A14C9 /* ResumeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResumeViewController.swift; sourceTree = "<group>"; };
+		F8CD3598255E6E960035F699 /* WalgreensJobsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalgreensJobsTableViewController.swift; sourceTree = "<group>"; };
+		F8CD359A2565B8240035F699 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F8CD359E256640EE0035F699 /* JobClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobClass.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		186C3D4D24C097B900AC13C1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A35FE7C37EC528DAB56E684 /* Pods_JobFinder.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		186C3D6324C097B900AC13C1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				75EAE7A1E0F2CFC6362B2000 /* Pods_JobFinderTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		186C3D6E24C097B900AC13C1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C0F856A24837AB69FEF271CC /* Pods_JobFinder_JobFinderUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		186C3D4724C097B900AC13C1 = {
+			isa = PBXGroup;
+			children = (
+				186C3D5224C097B900AC13C1 /* JobFinder */,
+				186C3D6924C097B900AC13C1 /* JobFinderTests */,
+				186C3D7424C097B900AC13C1 /* JobFinderUITests */,
+				186C3D5124C097B900AC13C1 /* Products */,
+				1F27C683CA3B08D2295BFCF7 /* Pods */,
+				38F4D9943B76E1A44BDC62B2 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		186C3D5124C097B900AC13C1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				186C3D5024C097B900AC13C1 /* EZPZ: JobFinder.app */,
+				186C3D6624C097B900AC13C1 /* JobFinderTests.xctest */,
+				186C3D7124C097B900AC13C1 /* JobFinderUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		186C3D5224C097B900AC13C1 /* JobFinder */ = {
+			isa = PBXGroup;
+			children = (
+				186C3D5324C097B900AC13C1 /* AppDelegate.swift */,
+				186C3D5524C097B900AC13C1 /* SceneDelegate.swift */,
+				F852AA902567448100856F93 /* SignInTestViewController.swift */,
+				186C3D5724C097B900AC13C1 /* ViewController.swift */,
+				1801CDD424CE159A002733D7 /* MainJobsPage.swift */,
+				F852AA96256AC41500856F93 /* JobsCollectionViewCell.swift */,
+				F8CD359E256640EE0035F699 /* JobClass.swift */,
+				F8CD3598255E6E960035F699 /* WalgreensJobsTableViewController.swift */,
+				F852AA9E256EDB0700856F93 /* OrganizationClass.swift */,
+				1801CDD824CE36B1002733D7 /* GetInformedPage.swift */,
+				F867DD2825776D49000A14C9 /* OrganizationsDetailTableViewController.swift */,
+				F852AA9C256ED92900856F93 /* OrganizationsCollectionViewCell.swift */,
+				1801CDD624CE3198002733D7 /* YourProfilePage.swift */,
+				1801CE1C24D1192F002733D7 /* Login.swift */,
+				3FB5540F255CAB7600FACDB6 /* ProfileTableViewController.swift */,
+				F867DD82258BDA44000A14C9 /* JobsViewController.swift */,
+				F867DD80258BDA3A000A14C9 /* BusinessTableViewController.swift */,
+				F867DD84258BDA52000A14C9 /* NetworkManager.swift */,
+				F867DD86258BDC6D000A14C9 /* Response.swift */,
+				F867DD88258BE109000A14C9 /* ClusterAnnotationView.swift */,
+				F867DD8A258BE112000A14C9 /* CycleAnnotationView.swift */,
+				F867DD8C258C0E8B000A14C9 /* DetailMapViewController.swift */,
+				F867DD8E258C0FE8000A14C9 /* ClusterDetailTableViewController.swift */,
+				F867DD90258D56D1000A14C9 /* ResumeViewController.swift */,
+				3F7FFE0F25A8164A00B26461 /* SearchBarTestViewController.swift */,
+				186C3D5924C097B900AC13C1 /* Main.storyboard */,
+				186C3D5C24C097B900AC13C1 /* Assets.xcassets */,
+				186C3D5E24C097B900AC13C1 /* LaunchScreen.storyboard */,
+				186C3D6124C097B900AC13C1 /* Info.plist */,
+				F8CD359A2565B8240035F699 /* GoogleService-Info.plist */,
+			);
+			path = JobFinder;
+			sourceTree = "<group>";
+		};
+		186C3D6924C097B900AC13C1 /* JobFinderTests */ = {
+			isa = PBXGroup;
+			children = (
+				186C3D6A24C097B900AC13C1 /* JobFinderTests.swift */,
+				186C3D6C24C097B900AC13C1 /* Info.plist */,
+			);
+			path = JobFinderTests;
+			sourceTree = "<group>";
+		};
+		186C3D7424C097B900AC13C1 /* JobFinderUITests */ = {
+			isa = PBXGroup;
+			children = (
+				186C3D7524C097B900AC13C1 /* JobFinderUITests.swift */,
+				186C3D7724C097B900AC13C1 /* Info.plist */,
+			);
+			path = JobFinderUITests;
+			sourceTree = "<group>";
+		};
+		1F27C683CA3B08D2295BFCF7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2E6ABFD7996F98FBFF3C22EF /* Pods-JobFinder.debug.xcconfig */,
+				24198C9EA14B7507BE4140DD /* Pods-JobFinder.release.xcconfig */,
+				EDAAE486766DF5F65846A854 /* Pods-JobFinder-JobFinderUITests.debug.xcconfig */,
+				BBC23173304FBB3A90988887 /* Pods-JobFinder-JobFinderUITests.release.xcconfig */,
+				8360A43DE654303E0D90C2C0 /* Pods-JobFinderTests.debug.xcconfig */,
+				7B69CDF85FE266A11907BD6E /* Pods-JobFinderTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		38F4D9943B76E1A44BDC62B2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				24C51DF761C8C73C7E45C5D5 /* Pods_JobFinder.framework */,
+				EDE416418368A335316315AE /* Pods_JobFinder_JobFinderUITests.framework */,
+				416FC9B9C22ACBCCFDAD8A84 /* Pods_JobFinderTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		186C3D4F24C097B900AC13C1 /* JobFinder */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 186C3D7A24C097B900AC13C1 /* Build configuration list for PBXNativeTarget "JobFinder" */;
+			buildPhases = (
+				FB07DD5D86A5E390660AAE90 /* [CP] Check Pods Manifest.lock */,
+				186C3D4C24C097B900AC13C1 /* Sources */,
+				186C3D4D24C097B900AC13C1 /* Frameworks */,
+				186C3D4E24C097B900AC13C1 /* Resources */,
+				BC833FB6BE6B35C4AA3253E8 /* [CP] Embed Pods Frameworks */,
+				D894F445A4C2BCF15DAEE253 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JobFinder;
+			productName = JobFinder;
+			productReference = 186C3D5024C097B900AC13C1 /* EZPZ: JobFinder.app */;
+			productType = "com.apple.product-type.application";
+		};
+		186C3D6524C097B900AC13C1 /* JobFinderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 186C3D7D24C097B900AC13C1 /* Build configuration list for PBXNativeTarget "JobFinderTests" */;
+			buildPhases = (
+				118686A308B38C549D7BD996 /* [CP] Check Pods Manifest.lock */,
+				186C3D6224C097B900AC13C1 /* Sources */,
+				186C3D6324C097B900AC13C1 /* Frameworks */,
+				186C3D6424C097B900AC13C1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				186C3D6824C097B900AC13C1 /* PBXTargetDependency */,
+			);
+			name = JobFinderTests;
+			productName = JobFinderTests;
+			productReference = 186C3D6624C097B900AC13C1 /* JobFinderTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		186C3D7024C097B900AC13C1 /* JobFinderUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 186C3D8024C097B900AC13C1 /* Build configuration list for PBXNativeTarget "JobFinderUITests" */;
+			buildPhases = (
+				D34C20E1287E23C324E319DE /* [CP] Check Pods Manifest.lock */,
+				186C3D6D24C097B900AC13C1 /* Sources */,
+				186C3D6E24C097B900AC13C1 /* Frameworks */,
+				186C3D6F24C097B900AC13C1 /* Resources */,
+				C267360820537E6F87051B2D /* [CP] Embed Pods Frameworks */,
+				9933225C81B2C47F70B87291 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				186C3D7324C097B900AC13C1 /* PBXTargetDependency */,
+			);
+			name = JobFinderUITests;
+			productName = JobFinderUITests;
+			productReference = 186C3D7124C097B900AC13C1 /* JobFinderUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		186C3D4824C097B900AC13C1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = Apple;
+				TargetAttributes = {
+					186C3D4F24C097B900AC13C1 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+					186C3D6524C097B900AC13C1 = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = 186C3D4F24C097B900AC13C1;
+					};
+					186C3D7024C097B900AC13C1 = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = 186C3D4F24C097B900AC13C1;
+					};
+				};
+			};
+			buildConfigurationList = 186C3D4B24C097B900AC13C1 /* Build configuration list for PBXProject "JobFinder" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 186C3D4724C097B900AC13C1;
+			productRefGroup = 186C3D5124C097B900AC13C1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				186C3D4F24C097B900AC13C1 /* JobFinder */,
+				186C3D6524C097B900AC13C1 /* JobFinderTests */,
+				186C3D7024C097B900AC13C1 /* JobFinderUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		186C3D4E24C097B900AC13C1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				186C3D6024C097B900AC13C1 /* LaunchScreen.storyboard in Resources */,
+				F8CD359B2565B8240035F699 /* GoogleService-Info.plist in Resources */,
+				186C3D5D24C097B900AC13C1 /* Assets.xcassets in Resources */,
+				186C3D5B24C097B900AC13C1 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		186C3D6424C097B900AC13C1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		186C3D6F24C097B900AC13C1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		118686A308B38C549D7BD996 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-JobFinderTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9933225C81B2C47F70B87291 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JobFinder-JobFinderUITests/Pods-JobFinder-JobFinderUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JobFinder-JobFinderUITests/Pods-JobFinder-JobFinderUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JobFinder-JobFinderUITests/Pods-JobFinder-JobFinderUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BC833FB6BE6B35C4AA3253E8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JobFinder/Pods-JobFinder-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JobFinder/Pods-JobFinder-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JobFinder/Pods-JobFinder-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C267360820537E6F87051B2D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JobFinder-JobFinderUITests/Pods-JobFinder-JobFinderUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JobFinder-JobFinderUITests/Pods-JobFinder-JobFinderUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JobFinder-JobFinderUITests/Pods-JobFinder-JobFinderUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D34C20E1287E23C324E319DE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-JobFinder-JobFinderUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D894F445A4C2BCF15DAEE253 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JobFinder/Pods-JobFinder-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JobFinder/Pods-JobFinder-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JobFinder/Pods-JobFinder-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FB07DD5D86A5E390660AAE90 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-JobFinder-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		186C3D4C24C097B900AC13C1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F867DD8D258C0E8C000A14C9 /* DetailMapViewController.swift in Sources */,
+				F867DD85258BDA52000A14C9 /* NetworkManager.swift in Sources */,
+				3FB55410255CAB7600FACDB6 /* ProfileTableViewController.swift in Sources */,
+				F867DD89258BE109000A14C9 /* ClusterAnnotationView.swift in Sources */,
+				1801CDD524CE159A002733D7 /* MainJobsPage.swift in Sources */,
+				F8CD359F256640EE0035F699 /* JobClass.swift in Sources */,
+				F867DD83258BDA44000A14C9 /* JobsViewController.swift in Sources */,
+				F867DD87258BDC6D000A14C9 /* Response.swift in Sources */,
+				3F7FFE1025A8164A00B26461 /* SearchBarTestViewController.swift in Sources */,
+				F852AA98256AC41500856F93 /* JobsCollectionViewCell.swift in Sources */,
+				186C3D5824C097B900AC13C1 /* ViewController.swift in Sources */,
+				1801CDD924CE36B1002733D7 /* GetInformedPage.swift in Sources */,
+				F867DD2925776D49000A14C9 /* OrganizationsDetailTableViewController.swift in Sources */,
+				186C3D5424C097B900AC13C1 /* AppDelegate.swift in Sources */,
+				1801CE1D24D1192F002733D7 /* Login.swift in Sources */,
+				F852AA912567448100856F93 /* SignInTestViewController.swift in Sources */,
+				F8CD3599255E6E960035F699 /* WalgreensJobsTableViewController.swift in Sources */,
+				F852AA9F256EDB0700856F93 /* OrganizationClass.swift in Sources */,
+				F867DD8F258C0FE8000A14C9 /* ClusterDetailTableViewController.swift in Sources */,
+				F852AA9D256ED92900856F93 /* OrganizationsCollectionViewCell.swift in Sources */,
+				F867DD8B258BE112000A14C9 /* CycleAnnotationView.swift in Sources */,
+				F867DD81258BDA3B000A14C9 /* BusinessTableViewController.swift in Sources */,
+				F867DD91258D56D2000A14C9 /* ResumeViewController.swift in Sources */,
+				1801CDD724CE3198002733D7 /* YourProfilePage.swift in Sources */,
+				186C3D5624C097B900AC13C1 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		186C3D6224C097B900AC13C1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				186C3D6B24C097B900AC13C1 /* JobFinderTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		186C3D6D24C097B900AC13C1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				186C3D7624C097B900AC13C1 /* JobFinderUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		186C3D6824C097B900AC13C1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 186C3D4F24C097B900AC13C1 /* JobFinder */;
+			targetProxy = 186C3D6724C097B900AC13C1 /* PBXContainerItemProxy */;
+		};
+		186C3D7324C097B900AC13C1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 186C3D4F24C097B900AC13C1 /* JobFinder */;
+			targetProxy = 186C3D7224C097B900AC13C1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		186C3D5924C097B900AC13C1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				186C3D5A24C097B900AC13C1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		186C3D5E24C097B900AC13C1 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				186C3D5F24C097B900AC13C1 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		186C3D7824C097B900AC13C1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		186C3D7924C097B900AC13C1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		186C3D7B24C097B900AC13C1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2E6ABFD7996F98FBFF3C22EF /* Pods-JobFinder.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2FC55U4YU5;
+				INFOPLIST_FILE = JobFinder/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.EZPZ.JobFinder;
+				PRODUCT_NAME = "EZPZ: JobFinder";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		186C3D7C24C097B900AC13C1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24198C9EA14B7507BE4140DD /* Pods-JobFinder.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2FC55U4YU5;
+				INFOPLIST_FILE = JobFinder/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.EZPZ.JobFinder;
+				PRODUCT_NAME = "EZPZ: JobFinder";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		186C3D7E24C097B900AC13C1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8360A43DE654303E0D90C2C0 /* Pods-JobFinderTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = JobFinderTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Challenge.JobFinderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JobFinder.app/JobFinder";
+			};
+			name = Debug;
+		};
+		186C3D7F24C097B900AC13C1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B69CDF85FE266A11907BD6E /* Pods-JobFinderTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = JobFinderTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Challenge.JobFinderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JobFinder.app/JobFinder";
+			};
+			name = Release;
+		};
+		186C3D8124C097B900AC13C1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EDAAE486766DF5F65846A854 /* Pods-JobFinder-JobFinderUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = JobFinderUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Challenge.JobFinderUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = JobFinder;
+			};
+			name = Debug;
+		};
+		186C3D8224C097B900AC13C1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BBC23173304FBB3A90988887 /* Pods-JobFinder-JobFinderUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = JobFinderUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Challenge.JobFinderUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = JobFinder;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		186C3D4B24C097B900AC13C1 /* Build configuration list for PBXProject "JobFinder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				186C3D7824C097B900AC13C1 /* Debug */,
+				186C3D7924C097B900AC13C1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		186C3D7A24C097B900AC13C1 /* Build configuration list for PBXNativeTarget "JobFinder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				186C3D7B24C097B900AC13C1 /* Debug */,
+				186C3D7C24C097B900AC13C1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		186C3D7D24C097B900AC13C1 /* Build configuration list for PBXNativeTarget "JobFinderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				186C3D7E24C097B900AC13C1 /* Debug */,
+				186C3D7F24C097B900AC13C1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		186C3D8024C097B900AC13C1 /* Build configuration list for PBXNativeTarget "JobFinderUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				186C3D8124C097B900AC13C1 /* Debug */,
+				186C3D8224C097B900AC13C1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 186C3D4824C097B900AC13C1 /* Project object */;
+}
