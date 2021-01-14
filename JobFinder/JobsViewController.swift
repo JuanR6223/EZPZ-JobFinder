@@ -20,8 +20,7 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
     var locationManager = CLLocationManager()
     
     //Array of Company Display Names
-    var data = [String]()
-    var filteredData = [String]()
+    var dataToDisplay = [Result]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +28,12 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         search.delegate = self
         search.placeholder = "Type something here to search for jobs"
-
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+        tap.cancelsTouchesInView = false
+        
+        
         locationManager.requestAlwaysAuthorization()
         locationManager.startUpdatingLocation()
         
@@ -44,10 +48,9 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
                     annotation.subtitle = post.title
                     annotation.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
                     annotations.append(annotation)
-                    data.append(annotation.title!)
                 }
             }
-            filteredData = data
+            self.dataToDisplay = self.jobPosts
             self.mapView.showAnnotations(annotations, animated: false)
             self.tableView.reloadData()
         }
@@ -76,17 +79,17 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return filteredData.count
+        return dataToDisplay.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
         
-        let restaurant = jobPosts[indexPath.row]
+        let job = dataToDisplay[indexPath.row]
         //cell.textLabel?.text = restaurant.company.displayName
-        cell.textLabel?.text = filteredData[indexPath.row]
+        cell.textLabel?.text = job.company.displayName
         
-        cell.detailTextLabel?.text = restaurant.title
+        cell.detailTextLabel?.text = job.title
         
         return cell
     }
@@ -135,7 +138,7 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
             let destination = segue.destination as! BusinessTableViewController
             // Pass the selected object to the new view controller.
             if let indexPath = tableView.indexPathForSelectedRow {
-                destination.job = jobPosts[indexPath.row]
+                destination.job = dataToDisplay[indexPath.row]
             }
         }
     }
@@ -153,19 +156,21 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        //print("hi")
-        
-        filteredData = []
-        
+
         if searchText == "" {
-            filteredData = data
+            dataToDisplay = jobPosts
         } else {
-            for jobTitle in data {
-                if jobTitle.lowercased().contains(searchText.lowercased()) {
-                    filteredData.append(jobTitle)
+            dataToDisplay.removeAll()
+            for job in jobPosts {
+                if job.title.lowercased().contains(searchText.lowercased()) || job.company.displayName.lowercased().contains(searchText.lowercased()) {
+                    dataToDisplay.append(job)
                 }
             }
         }
         self.tableView.reloadData()
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
 }
