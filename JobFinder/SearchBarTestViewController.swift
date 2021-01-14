@@ -14,7 +14,7 @@ class SearchBarTestViewController: UIViewController, UISearchResultsUpdating {
         super.viewDidLoad()
 
         let search = UISearchController(searchResultsController: nil)
-        search.searchResultsUpdater = self
+        //search.searchResultsUpdater = self
         search.obscuresBackgroundDuringPresentation = false
         search.searchBar.placeholder = "Type something here to search"
         navigationItem.searchController = search

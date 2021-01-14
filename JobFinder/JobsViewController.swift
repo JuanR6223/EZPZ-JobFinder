@@ -9,23 +9,27 @@
 import UIKit
 import MapKit
 
-class JobsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMapViewDelegate, UISearchResultsUpdating {
+class JobsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMapViewDelegate, UISearchBarDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var search: UISearchBar!
     
     var jobPosts = [Result]()
     var memberAnnotations: [MKAnnotation]?
     var locationManager = CLLocationManager()
     
+    //Array of Company Display Names
     var data = [String]()
-
-
+    var filteredData = [String]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         registerAnnotationViewClasses()
-        setUpNavigationBarItems()
         
+        search.delegate = self
+        search.placeholder = "Type something here to search for jobs"
+
         locationManager.requestAlwaysAuthorization()
         locationManager.startUpdatingLocation()
         
@@ -43,48 +47,50 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
                     data.append(annotation.title!)
                 }
             }
+            filteredData = data
             self.mapView.showAnnotations(annotations, animated: false)
-            print(annotations.count)
-            print(self.mapView.annotations.count)
             self.tableView.reloadData()
-            print(data)
         }
         
         mapView.showsUserLocation = true
         mapView.userLocation.title = "My Location"
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-
+        
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-
+    
+    
     // MARK: - Table view data source
     @IBAction func segmentedControlChanged(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 1 {
             mapView.isHidden = false
             tableView.isHidden = true
+            search.isHidden = true
         } else {
             mapView.isHidden = true
             tableView.isHidden = false
+            search.isHidden = false
         }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return jobPosts.count
+        return filteredData.count
     }
-
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
+        
         let restaurant = jobPosts[indexPath.row]
-        cell.textLabel?.text = restaurant.company.displayName
+        //cell.textLabel?.text = restaurant.company.displayName
+        cell.textLabel?.text = filteredData[indexPath.row]
+        
         cell.detailTextLabel?.text = restaurant.title
-
+        
         return cell
     }
+    
     
     private func registerAnnotationViewClasses() {
         mapView.register(JobMarkerAnnotationView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
@@ -93,7 +99,6 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         guard annotation is MKPointAnnotation else { return nil }
-        //why cluster annotation no show
         
         let annotationView = JobMarkerAnnotationView(annotation: annotation, reuseIdentifier: JobMarkerAnnotationView.ReuseID)
         
@@ -111,14 +116,14 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-           centerToLocation(location: locations.last!)
-       }
-
-       func centerToLocation (location: CLLocation) {
-           let regionRadius: CLLocationDistance = 4828.03 //meters
-           let coordinateRegion = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
-           mapView.setRegion(coordinateRegion, animated: true)
-       }
+        centerToLocation(location: locations.last!)
+    }
+    
+    func centerToLocation (location: CLLocation) {
+        let regionRadius: CLLocationDistance = 4828.03 //meters
+        let coordinateRegion = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
+        mapView.setRegion(coordinateRegion, animated: true)
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let dvc = segue.destination as? ClusterDetailTableViewController {
@@ -126,7 +131,7 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
                 dvc.memberAnnotations = memberAnnotations
             }
         } else {
-        // Get the new view controller using segue.destination.
+            // Get the new view controller using segue.destination.
             let destination = segue.destination as! BusinessTableViewController
             // Pass the selected object to the new view controller.
             if let indexPath = tableView.indexPathForSelectedRow {
@@ -136,24 +141,31 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
-
+        
         if let annotationView = view.annotation as? MKClusterAnnotation {
             print(annotationView.memberAnnotations.count)
             memberAnnotations = annotationView.memberAnnotations
+            
             performSegue(withIdentifier: "clusterSegue", sender: nil)
         }
     }
     
-    private func setUpNavigationBarItems() {
+    
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        //print("hi")
         
-        let search = UISearchController(searchResultsController: nil)
-        search.searchResultsUpdater = self
-        search.obscuresBackgroundDuringPresentation = false
-        search.searchBar.placeholder = "Type something here to search"
-        navigationItem.searchController = search
-    }
-    func updateSearchResults(for searchController: UISearchController) {
-        guard let text = searchController.searchBar.text else { return }
-        print(text)
+        filteredData = []
+        
+        if searchText == "" {
+            filteredData = data
+        } else {
+            for jobTitle in data {
+                if jobTitle.lowercased().contains(searchText.lowercased()) {
+                    filteredData.append(jobTitle)
+                }
+            }
+        }
+        self.tableView.reloadData()
     }
 }
