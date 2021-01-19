@@ -36,7 +36,6 @@ class ClusterDetailTableViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "clusterCellID", for: indexPath)
         cell.textLabel!.text = annotation.title as? String
-        //cell.detailTextLabel?.text = annotation.subtitle as? String
         cell.detailTextLabel?.attributedText = convertHTMLText(text: annotation.subtitle!!)
         cell.detailTextLabel?.font = UIFont(name: "Avenir Next Regular", size: 12.0)
 

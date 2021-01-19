@@ -16,7 +16,7 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var search: UISearchBar!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var favoriteTitle: UILabel!
-    @IBOutlet weak var noFavoritesView: UIView!
+    @IBOutlet weak var noFavoriteLabel: UILabel!
     
     var jobPosts = [Result]()
     //Array of Company Display Names
@@ -81,18 +81,19 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
             mapView.isHidden = true
             tableView.isHidden = false
             search.isHidden = true
+            tableView.frame.origin = CGPoint(x: 0, y: 144)
             favoriteTitle.isHidden = false
             favoriteTitle.frame.origin = CGPoint(x: 0, y: 88)
-            noFavoritesView.isHidden = false
+            noFavoriteLabel.isHidden = false
 
             dataToDisplay = self.favoritesList
             tableView.reloadData()
         } else {
             mapView.isHidden = true
             tableView.isHidden = false
+            tableView.frame.origin = CGPoint(x: 0, y: 144)
             search.isHidden = false
             favoriteTitle.isHidden = true
-            noFavoritesView.isHidden = true
             
             dataToDisplay = self.jobPosts
             tableView.reloadData()

@@ -635,8 +635,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Extracurricular Opportunities for High School Students" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ykt-N8-BNQ">
+                                <rect key="frame" x="20" y="112" width="374" height="48"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fEN-yj-Efr">
-                                <rect key="frame" x="20" y="218" width="374" height="595"/>
+                                <rect key="frame" x="20" y="168" width="374" height="645"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ppm-VA-g6g">
                                     <size key="itemSize" width="130" height="130"/>
@@ -670,10 +676,13 @@
                         <viewLayoutGuide key="safeArea" id="2e6-ez-aFv"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="ykt-N8-BNQ" firstAttribute="top" secondItem="2e6-ez-aFv" secondAttribute="top" constant="24" id="1LA-Gv-PFb"/>
                             <constraint firstItem="2e6-ez-aFv" firstAttribute="trailing" secondItem="fEN-yj-Efr" secondAttribute="trailing" constant="20" id="6mk-5P-1ZP"/>
+                            <constraint firstItem="2e6-ez-aFv" firstAttribute="trailing" secondItem="ykt-N8-BNQ" secondAttribute="trailing" constant="20" id="9HR-ih-82Y"/>
+                            <constraint firstItem="fEN-yj-Efr" firstAttribute="top" secondItem="ykt-N8-BNQ" secondAttribute="bottom" constant="8" symbolic="YES" id="CpG-NQ-gxU"/>
+                            <constraint firstItem="ykt-N8-BNQ" firstAttribute="leading" secondItem="2e6-ez-aFv" secondAttribute="leading" constant="20" id="SiO-CW-de4"/>
                             <constraint firstItem="fEN-yj-Efr" firstAttribute="leading" secondItem="2e6-ez-aFv" secondAttribute="leading" constant="20" id="ZB9-H7-dqb"/>
                             <constraint firstItem="fEN-yj-Efr" firstAttribute="bottom" secondItem="2e6-ez-aFv" secondAttribute="bottom" id="pnr-0E-H05"/>
-                            <constraint firstItem="fEN-yj-Efr" firstAttribute="top" secondItem="2e6-ez-aFv" secondAttribute="top" constant="130" id="ykg-4V-Ka8"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Programs &amp; Volunteering" id="fIq-GU-hOV"/>
@@ -1587,7 +1596,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your Favorites List" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jxc-u1-6ok">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="No Jobs Have Been Favorited" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k8y-Sm-5J0">
+                                <rect key="frame" x="32" y="165" width="350" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                <color key="textColor" red="0.4267122733" green="0.4267122733" blue="0.4267122733" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your Favorite Jobs" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jxc-u1-6ok">
                                 <rect key="frame" x="0.0" y="138" width="414" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="23"/>
@@ -1598,20 +1614,6 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
-                            <view contentMode="scaleToFill" id="Rlo-NG-Zdt">
-                                <rect key="frame" x="0.0" y="138" width="414" height="669"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="No Jobs Have Been Favorited" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k8y-Sm-5J0">
-                                        <rect key="frame" x="27" y="8" width="350" height="62"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
-                                        <color key="textColor" red="0.4267122733" green="0.4267122733" blue="0.4267122733" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iiU-un-y0z">
                                 <rect key="frame" x="0.0" y="144" width="414" height="669"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1689,7 +1691,7 @@
                     <connections>
                         <outlet property="favoriteTitle" destination="jxc-u1-6ok" id="T8S-Xd-h5m"/>
                         <outlet property="mapView" destination="KCH-3Y-6gm" id="gsq-XJ-d6s"/>
-                        <outlet property="noFavoritesView" destination="Rlo-NG-Zdt" id="lbd-9v-opg"/>
+                        <outlet property="noFavoriteLabel" destination="k8y-Sm-5J0" id="Xlz-8f-pAo"/>
                         <outlet property="search" destination="xKK-zL-8un" id="WZb-C5-zLY"/>
                         <outlet property="segmentedControl" destination="v6l-Mk-CuY" id="cd7-wR-Flt"/>
                         <outlet property="tableView" destination="iiU-un-y0z" id="1Fn-hd-hZ1"/>

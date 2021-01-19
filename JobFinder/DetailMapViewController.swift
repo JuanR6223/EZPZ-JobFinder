@@ -24,16 +24,13 @@ class DetailMapViewController: UIViewController, MKMapViewDelegate {
         
         detailMapView.showsUserLocation = true
         detailMapView.userLocation.title = "My Location"
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        centerToLocation(location: locations.last!)
+        
+        let region = MKCoordinateRegion( center: detailMapView.userLocation.coordinate, latitudinalMeters: CLLocationDistance(exactly: 5000)!, longitudinalMeters: CLLocationDistance(exactly: 5000)!)
+        detailMapView.setRegion(region, animated: true)
     }
 
-    func centerToLocation (location: CLLocation) {
-        let regionRadius: CLLocationDistance = 4828.03 //meters
-        let coordinateRegion = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
-        detailMapView.setRegion(coordinateRegion, animated: true)
-    }
-    
+//    func centerToLocation (location: CLLocation) {
+//        let region = MKCoordinateRegion( center: detailMapView.userLocation.coordinate, latitudinalMeters: CLLocationDistance(exactly: 100000)!, longitudinalMeters: CLLocationDistance(exactly: 100000)!)
+//        detailMapView.setRegion(region, animated: true)
+//    }
 }
