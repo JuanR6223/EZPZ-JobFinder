@@ -26,10 +26,9 @@ struct Result: Decodable {
     //let salaryMin: String
     //let salaryMax: String
     let salaryIsPredicted: String
-    
+    //var isFavorite = false
     struct Company: Decodable {
         let displayName: String
-        
     }
     
     struct Location: Decodable {

@@ -20,8 +20,7 @@
 		186C3D6B24C097B900AC13C1 /* JobFinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186C3D6A24C097B900AC13C1 /* JobFinderTests.swift */; };
 		186C3D7624C097B900AC13C1 /* JobFinderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186C3D7524C097B900AC13C1 /* JobFinderUITests.swift */; };
 		1A35FE7C37EC528DAB56E684 /* Pods_JobFinder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24C51DF761C8C73C7E45C5D5 /* Pods_JobFinder.framework */; };
-		3F7FFE1025A8164A00B26461 /* SearchBarTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7FFE0F25A8164A00B26461 /* SearchBarTestViewController.swift */; };
-		3F7FFEA425AFC9FE00B26461 /* FavoritesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7FFEA325AFC9FE00B26461 /* FavoritesTableViewController.swift */; };
+		3F4FAD5525B3CC0E006C23D4 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4FAD5425B3CC0E006C23D4 /* TableViewCell.swift */; };
 		3FB55410255CAB7600FACDB6 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB5540F255CAB7600FACDB6 /* ProfileTableViewController.swift */; };
 		75EAE7A1E0F2CFC6362B2000 /* Pods_JobFinderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 416FC9B9C22ACBCCFDAD8A84 /* Pods_JobFinderTests.framework */; };
 		C0F856A24837AB69FEF271CC /* Pods_JobFinder_JobFinderUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDE416418368A335316315AE /* Pods_JobFinder_JobFinderUITests.framework */; };
@@ -83,8 +82,7 @@
 		24198C9EA14B7507BE4140DD /* Pods-JobFinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JobFinder.release.xcconfig"; path = "Target Support Files/Pods-JobFinder/Pods-JobFinder.release.xcconfig"; sourceTree = "<group>"; };
 		24C51DF761C8C73C7E45C5D5 /* Pods_JobFinder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JobFinder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E6ABFD7996F98FBFF3C22EF /* Pods-JobFinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JobFinder.debug.xcconfig"; path = "Target Support Files/Pods-JobFinder/Pods-JobFinder.debug.xcconfig"; sourceTree = "<group>"; };
-		3F7FFE0F25A8164A00B26461 /* SearchBarTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarTestViewController.swift; sourceTree = "<group>"; };
-		3F7FFEA325AFC9FE00B26461 /* FavoritesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewController.swift; sourceTree = "<group>"; };
+		3F4FAD5425B3CC0E006C23D4 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		3FB5540F255CAB7600FACDB6 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 		416FC9B9C22ACBCCFDAD8A84 /* Pods_JobFinderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JobFinderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B69CDF85FE266A11907BD6E /* Pods-JobFinderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JobFinderTests.release.xcconfig"; path = "Target Support Files/Pods-JobFinderTests/Pods-JobFinderTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -181,15 +179,14 @@
 				3FB5540F255CAB7600FACDB6 /* ProfileTableViewController.swift */,
 				F867DD84258BDA52000A14C9 /* NetworkManager.swift */,
 				F867DD86258BDC6D000A14C9 /* Response.swift */,
+				3F4FAD5425B3CC0E006C23D4 /* TableViewCell.swift */,
 				F867DD82258BDA44000A14C9 /* JobsViewController.swift */,
 				F867DD80258BDA3A000A14C9 /* BusinessTableViewController.swift */,
+				F867DD8E258C0FE8000A14C9 /* ClusterDetailTableViewController.swift */,
+				F867DD8C258C0E8B000A14C9 /* DetailMapViewController.swift */,
 				F867DD88258BE109000A14C9 /* ClusterAnnotationView.swift */,
 				F867DD8A258BE112000A14C9 /* CycleAnnotationView.swift */,
-				F867DD8C258C0E8B000A14C9 /* DetailMapViewController.swift */,
-				F867DD8E258C0FE8000A14C9 /* ClusterDetailTableViewController.swift */,
-				3F7FFEA325AFC9FE00B26461 /* FavoritesTableViewController.swift */,
 				F867DD90258D56D1000A14C9 /* ResumeViewController.swift */,
-				3F7FFE0F25A8164A00B26461 /* SearchBarTestViewController.swift */,
 				186C3D5924C097B900AC13C1 /* Main.storyboard */,
 				186C3D5C24C097B900AC13C1 /* Assets.xcassets */,
 				186C3D5E24C097B900AC13C1 /* LaunchScreen.storyboard */,
@@ -517,7 +514,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F867DD8D258C0E8C000A14C9 /* DetailMapViewController.swift in Sources */,
-				3F7FFEA425AFC9FE00B26461 /* FavoritesTableViewController.swift in Sources */,
 				F867DD85258BDA52000A14C9 /* NetworkManager.swift in Sources */,
 				3FB55410255CAB7600FACDB6 /* ProfileTableViewController.swift in Sources */,
 				F867DD89258BE109000A14C9 /* ClusterAnnotationView.swift in Sources */,
@@ -525,9 +521,9 @@
 				F8CD359F256640EE0035F699 /* JobClass.swift in Sources */,
 				F867DD83258BDA44000A14C9 /* JobsViewController.swift in Sources */,
 				F867DD87258BDC6D000A14C9 /* Response.swift in Sources */,
-				3F7FFE1025A8164A00B26461 /* SearchBarTestViewController.swift in Sources */,
 				F852AA98256AC41500856F93 /* JobsCollectionViewCell.swift in Sources */,
 				186C3D5824C097B900AC13C1 /* ViewController.swift in Sources */,
+				3F4FAD5525B3CC0E006C23D4 /* TableViewCell.swift in Sources */,
 				1801CDD924CE36B1002733D7 /* GetInformedPage.swift in Sources */,
 				F867DD2925776D49000A14C9 /* OrganizationsDetailTableViewController.swift in Sources */,
 				186C3D5424C097B900AC13C1 /* AppDelegate.swift in Sources */,
@@ -715,6 +711,7 @@
 			baseConfigurationReference = 2E6ABFD7996F98FBFF3C22EF /* Pods-JobFinder.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2FC55U4YU5;
 				INFOPLIST_FILE = JobFinder/Info.plist;
@@ -722,8 +719,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.EZPZ.JobFinder;
 				PRODUCT_NAME = "EZPZ: JobFinder";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -734,6 +733,7 @@
 			baseConfigurationReference = 24198C9EA14B7507BE4140DD /* Pods-JobFinder.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2FC55U4YU5;
 				INFOPLIST_FILE = JobFinder/Info.plist;
@@ -741,8 +741,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.EZPZ.JobFinder;
 				PRODUCT_NAME = "EZPZ: JobFinder";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

@@ -14,29 +14,42 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var search: UISearchBar!
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    @IBOutlet weak var favoriteTitle: UILabel!
+    @IBOutlet weak var noFavoritesView: UIView!
     
     var jobPosts = [Result]()
-    var memberAnnotations: [MKAnnotation]?
-    var locationManager = CLLocationManager()
-    
     //Array of Company Display Names
     var dataToDisplay = [Result]()
     
+    //favoritesListData
+    var favoritesList = [Result]()
+    
+    var memberAnnotations: [MKAnnotation]?
+    var locationManager = CLLocationManager()
+    
+    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         registerAnnotationViewClasses()
         
+        mapView.showsUserLocation = true
+        mapView.userLocation.title = "My Location"
+        
+        tableView.register(TableViewCell.self, forCellReuseIdentifier: "reuseIdentifier")
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        
         search.delegate = self
         search.placeholder = "Type something here to search for jobs"
-        
         let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
         tap.cancelsTouchesInView = false
         
-        
         locationManager.requestAlwaysAuthorization()
         locationManager.startUpdatingLocation()
-        
         NetworkManager.getRestaurants { [self] (restaurants) in
             self.jobPosts = restaurants
             var annotations = [MKPointAnnotation]()
@@ -54,47 +67,40 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
             self.mapView.showAnnotations(annotations, animated: false)
             self.tableView.reloadData()
         }
-        
-        mapView.showsUserLocation = true
-        mapView.userLocation.title = "My Location"
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
-    
-    // MARK: - Table view data source
+    //Segmented Control
     @IBAction func segmentedControlChanged(_ sender: UISegmentedControl) {
+        
         if sender.selectedSegmentIndex == 1 {
             mapView.isHidden = false
             tableView.isHidden = true
             search.isHidden = true
+            favoriteTitle.isHidden = true
+        } else if sender.selectedSegmentIndex == 2{
+            mapView.isHidden = true
+            tableView.isHidden = false
+            search.isHidden = true
+            favoriteTitle.isHidden = false
+            favoriteTitle.frame.origin = CGPoint(x: 0, y: 88)
+            noFavoritesView.isHidden = false
+
+            dataToDisplay = self.favoritesList
+            tableView.reloadData()
         } else {
             mapView.isHidden = true
             tableView.isHidden = false
             search.isHidden = false
+            favoriteTitle.isHidden = true
+            noFavoritesView.isHidden = true
+            
+            dataToDisplay = self.jobPosts
+            tableView.reloadData()
         }
     }
+
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataToDisplay.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-        
-        let job = dataToDisplay[indexPath.row]
-        //cell.textLabel?.text = restaurant.company.displayName
-        cell.textLabel?.text = job.company.displayName
-        
-        cell.detailTextLabel?.text = job.title
-        
-        return cell
-    }
-    
-    
+    //MapView
     private func registerAnnotationViewClasses() {
         mapView.register(JobMarkerAnnotationView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
         mapView.register(ClusterAnnotationView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultClusterAnnotationViewReuseIdentifier)
@@ -115,7 +121,16 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
             annotationView.annotation = annotation
         }
         return annotationView
+    }
+    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         
+        if let annotationView = view.annotation as? MKClusterAnnotation {
+            print(annotationView.memberAnnotations.count)
+            memberAnnotations = annotationView.memberAnnotations
+            
+            performSegue(withIdentifier: "clusterSegue", sender: nil)
+        }
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -128,6 +143,53 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
         mapView.setRegion(coordinateRegion, animated: true)
     }
     
+    
+    //JobsTableView
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return dataToDisplay.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as! TableViewCell
+        
+        let job = dataToDisplay[indexPath.row]
+        
+        cell.textLabel?.numberOfLines = 0
+        cell.textLabel?.text = job.company.displayName
+        cell.detailTextLabel?.numberOfLines = 0
+        cell.detailTextLabel?.attributedText = convertHTMLText(text: "\(job.title) " + " \(job.created)")
+        cell.detailTextLabel?.font = UIFont(name: "Avenir Next Regular", size: 12.0)
+
+        
+        // assign the index of the youtuber to button tag
+          cell.favoriteButton.tag = indexPath.row
+          
+          // call the subscribeTapped method when tapped
+          cell.favoriteButton.addTarget(self, action: #selector(favoriteTapped(_:)), for: .touchUpInside)
+        
+        return cell
+    }
+    
+    @objc func favoriteTapped(_ sender: UIButton){
+        if segmentedControl.selectedSegmentIndex == 0 {
+            // use the tag of button as index
+            let job = jobPosts[sender.tag]
+              favoritesList.append(job)
+        } else if segmentedControl.selectedSegmentIndex == 2 {
+
+            favoritesList.remove(at: sender.tag)
+            tableView.reloadData()
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "jobsSegue", sender: self)
+    }
+    
+    
+    //Segue Data
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let dvc = segue.destination as? ClusterDetailTableViewController {
             if let memberAnnotations = memberAnnotations {
@@ -143,20 +205,9 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
-    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
-        
-        if let annotationView = view.annotation as? MKClusterAnnotation {
-            print(annotationView.memberAnnotations.count)
-            memberAnnotations = annotationView.memberAnnotations
-            
-            performSegue(withIdentifier: "clusterSegue", sender: nil)
-        }
-    }
-    
-    
-    
+    //SearchBar
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-
+        
         if searchText == "" {
             dataToDisplay = jobPosts
         } else {
@@ -172,5 +223,18 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @objc func dismissKeyboard() {
         view.endEditing(true)
+    }
+    
+    func convertHTMLText(text: String) -> NSAttributedString {
+        let data = Data(text.utf8)
+        let options: [NSAttributedString.DocumentReadingOptionKey: Any] = [.documentType: NSAttributedString.DocumentType.html,
+            .characterEncoding: String.Encoding.utf8.rawValue]
+        var attritbutedText: NSMutableAttributedString?
+        
+        if let attributedString = try? NSMutableAttributedString(data: data, options: options, documentAttributes: nil) {
+            attritbutedText = attributedString
+            return attributedString
+        }
+        return attritbutedText!
     }
 }

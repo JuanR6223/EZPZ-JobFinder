@@ -12,6 +12,7 @@ import MapKit
 class ClusterDetailTableViewController: UITableViewController {
 
     var memberAnnotations = [MKAnnotation]()
+    var jobs = [Result]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,9 +33,13 @@ class ClusterDetailTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let annotation = memberAnnotations[indexPath.row]
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "clusterCellID", for: indexPath)
-        cell.textLabel!.text = annotation.title as! String
-        cell.detailTextLabel?.text = annotation.subtitle as! String
+        cell.textLabel!.text = annotation.title as? String
+        //cell.detailTextLabel?.text = annotation.subtitle as? String
+        cell.detailTextLabel?.attributedText = convertHTMLText(text: annotation.subtitle!!)
+        cell.detailTextLabel?.font = UIFont(name: "Avenir Next Regular", size: 12.0)
+
         
         return cell
     }
@@ -47,5 +52,18 @@ class ClusterDetailTableViewController: UITableViewController {
         if let dvc = segue.destination as? DetailMapViewController {
             dvc.annotation = memberAnnotations[tableView.indexPathForSelectedRow!.row]
         }
+    }
+    
+    func convertHTMLText(text: String) -> NSAttributedString {
+        let data = Data(text.utf8)
+        let options: [NSAttributedString.DocumentReadingOptionKey: Any] = [.documentType: NSAttributedString.DocumentType.html,
+            .characterEncoding: String.Encoding.utf8.rawValue]
+        var attritbutedText: NSMutableAttributedString?
+        
+        if let attributedString = try? NSMutableAttributedString(data: data, options: options, documentAttributes: nil) {
+            attritbutedText = attributedString
+            return attributedString
+        }
+        return attritbutedText!
     }
 }
