@@ -22,7 +22,7 @@ class BusinessTableViewController: UITableViewController, SFSafariViewController
     @IBOutlet weak var learnMoreButton: UILabel!
     @IBOutlet weak var applyButton: UIButton!
     
-    var job: Result?
+    var job: JobClass?
     var annotations = [MKPointAnnotation]()
     
     
@@ -32,21 +32,21 @@ class BusinessTableViewController: UITableViewController, SFSafariViewController
         
         detailMapView.delegate = self
         
-        companyNameLabel.attributedText = convertHTMLText(text: job!.company.displayName, attritbutedText: &(companyNameLabel.attributedText)!)
+        companyNameLabel.attributedText = convertHTMLText(text: job!.result.company.displayName, attritbutedText: &(companyNameLabel.attributedText)!)
         companyNameLabel.font = UIFont(name: "Apple SD Gothic Neo Bold", size: 24.0)
         companyNameLabel.textAlignment = .center
         
-        jobTitleLabel.attributedText = convertHTMLText(text: job!.title, attritbutedText: &(jobTitleLabel.attributedText)!)
+        jobTitleLabel.attributedText = convertHTMLText(text: job!.result.title, attritbutedText: &(jobTitleLabel.attributedText)!)
         jobTitleLabel.font = UIFont(name: "Avenir Next Regular", size: 16.0)
 
-        descriptionLabel.attributedText = convertHTMLText(text: job!.description, attritbutedText: &(descriptionLabel.attributedText)!)
+        descriptionLabel.attributedText = convertHTMLText(text: job!.result.description, attritbutedText: &(descriptionLabel.attributedText)!)
         descriptionLabel.font = UIFont(name: "Avenir Next Regular", size: 16.0)
         
-        jobCreatedLabel.text = job?.created
-        jobCreatedLabel.attributedText = convertHTMLText(text: job!.created, attritbutedText: &(jobCreatedLabel.attributedText)!)
+        jobCreatedLabel.text = job?.result.created
+        jobCreatedLabel.attributedText = convertHTMLText(text: job!.result.created, attritbutedText: &(jobCreatedLabel.attributedText)!)
         jobCreatedLabel.font = UIFont(name: "Avenir Next Regular", size: 16.0)
         
-        jobLabelLabel.attributedText = convertHTMLText(text: job!.location.displayName, attritbutedText: &(jobLabelLabel.attributedText)!)
+        jobLabelLabel.attributedText = convertHTMLText(text: job!.result.location.displayName, attritbutedText: &(jobLabelLabel.attributedText)!)
         jobLabelLabel.font = UIFont(name: "Avenir Next Regular", size: 16.0)
         
         learnMoreButton.text = "Apply to Learn More"
@@ -65,7 +65,7 @@ class BusinessTableViewController: UITableViewController, SFSafariViewController
     }
     
     @IBAction func linkPressed(_ sender: Any) {
-        let link = job?.redirectUrl
+        let link = job?.result.redirectUrl
         let vc = SFSafariViewController(url: URL(string: link!)!)
         present(vc, animated: true)
     }
@@ -74,7 +74,7 @@ class BusinessTableViewController: UITableViewController, SFSafariViewController
         let ceo: CLGeocoder = CLGeocoder()
         var addressString : String = ""
         
-        if let latitude = job?.latitude, let longitude = job?.longitude {
+        if let latitude = job?.result.latitude, let longitude = job?.result.longitude {
             let loc: CLLocation = CLLocation(latitude: latitude, longitude: longitude)
             let annotation = MKPointAnnotation()
             
@@ -111,7 +111,7 @@ class BusinessTableViewController: UITableViewController, SFSafariViewController
                     addressString = addressString + pm.postalCode! + " "
                 }
                 annotation.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-                annotation.title = job?.company.displayName
+                annotation.title = job?.result.company.displayName
                 annotation.subtitle = addressString
             })
             annotations.append(annotation)

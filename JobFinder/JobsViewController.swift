@@ -18,12 +18,13 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var favoriteTitle: UILabel!
     @IBOutlet weak var noFavoriteLabel: UILabel!
     
-    var jobPosts = [Result]()
+    var jobPosts = [JobClass]()
+    
     //Array of Company Display Names
-    var dataToDisplay = [Result]()
+    var dataToDisplay = [JobClass]()
     
     //favoritesListData
-    var favoritesList = [Result]()
+    var favoritesList = [JobClass]()
     
     var memberAnnotations: [MKAnnotation]?
     var locationManager = CLLocationManager()
@@ -38,6 +39,7 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
         mapView.userLocation.title = "My Location"
         
         tableView.register(TableViewCell.self, forCellReuseIdentifier: "reuseIdentifier")
+        self.tableView.showsVerticalScrollIndicator = false
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -51,14 +53,18 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
         locationManager.requestAlwaysAuthorization()
         locationManager.startUpdatingLocation()
         NetworkManager.getRestaurants { [self] (restaurants) in
-            self.jobPosts = restaurants
+            //self.jobPosts = restaurants
+            for result in restaurants {
+                let job = JobClass(result: result, favorite: false)
+                self.jobPosts.append(job)
+            }
             var annotations = [MKPointAnnotation]()
             
             for post in self.jobPosts {
-                if let latitude = post.latitude, let longitude = post.longitude {
+                if let latitude = post.result.latitude, let longitude = post.result.longitude {
                     let annotation = MKPointAnnotation()
-                    annotation.title = post.company.displayName
-                    annotation.subtitle = post.title
+                    annotation.title = post.result.company.displayName
+                    annotation.subtitle = post.result.title
                     annotation.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
                     annotations.append(annotation)
                 }
@@ -154,13 +160,24 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as! TableViewCell
+        let job = dataToDisplay[indexPath.row].result
         
-        let job = dataToDisplay[indexPath.row]
+        let dateCreated = job.created
+        let dateFormatterGet = DateFormatter()
+        dateFormatterGet.dateFormat = "yyyy-MM-ddTHH:mm:ssZ"
+        let dateFormatterPrint = DateFormatter()
+        dateFormatterPrint.dateFormat = "MMM dd,yyyy"
+
+        if let date = dateFormatterGet.date(from: dateCreated) {
+            cell.detailTextLabel?.attributedText = convertHTMLText(text: "\(job.title) " + " \(dateFormatterPrint.string(from: date))")
+        } else {
+            cell.detailTextLabel?.attributedText = convertHTMLText(text: "\(job.title) " + " \(job.created)")
+        }
         
         cell.textLabel?.numberOfLines = 0
         cell.textLabel?.text = job.company.displayName
         cell.detailTextLabel?.numberOfLines = 0
-        cell.detailTextLabel?.attributedText = convertHTMLText(text: "\(job.title) " + " \(job.created)")
+        //cell.detailTextLabel?.attributedText = convertHTMLText(text: "\(job.title) " + " \(String(describing: dateFormatter.date(from: date)))")
         cell.detailTextLabel?.font = UIFont(name: "Avenir Next Regular", size: 12.0)
 
         
@@ -177,7 +194,8 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
         if segmentedControl.selectedSegmentIndex == 0 {
             // use the tag of button as index
             let job = jobPosts[sender.tag]
-              favoritesList.append(job)
+              //favoritesList.append(job)
+            job.isFavorite = true
         } else if segmentedControl.selectedSegmentIndex == 2 {
 
             favoritesList.remove(at: sender.tag)
@@ -214,7 +232,7 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
         } else {
             dataToDisplay.removeAll()
             for job in jobPosts {
-                if job.title.lowercased().contains(searchText.lowercased()) || job.company.displayName.lowercased().contains(searchText.lowercased()) {
+                if job.result.title.lowercased().contains(searchText.lowercased()) || job.result.company.displayName.lowercased().contains(searchText.lowercased()) {
                     dataToDisplay.append(job)
                 }
             }

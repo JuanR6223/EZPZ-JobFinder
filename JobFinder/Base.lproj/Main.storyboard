@@ -1615,14 +1615,14 @@
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iiU-un-y0z">
-                                <rect key="frame" x="0.0" y="144" width="414" height="669"/>
+                                <rect key="frame" x="12" y="144" width="387" height="669"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="reuseIdentifier" textLabel="NkX-Jr-8FI" detailTextLabel="dsp-Nm-M7y" style="IBUITableViewCellStyleSubtitle" id="PR4-uE-Ifo" customClass="TableViewCell" customModule="EZPZ__JobFinder" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="55.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="28" width="387" height="55.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PR4-uE-Ifo" id="K2j-9a-IzJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="55.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="387" height="55.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NkX-Jr-8FI">
@@ -1666,8 +1666,8 @@
                             <constraint firstItem="xKK-zL-8un" firstAttribute="leading" secondItem="sHw-g3-4Pw" secondAttribute="leading" id="83b-cB-GiL"/>
                             <constraint firstItem="iiU-un-y0z" firstAttribute="top" secondItem="xKK-zL-8un" secondAttribute="bottom" id="93I-Wz-1Qj"/>
                             <constraint firstItem="xKK-zL-8un" firstAttribute="top" secondItem="sHw-g3-4Pw" secondAttribute="top" id="9IA-qf-UZp"/>
-                            <constraint firstItem="sHw-g3-4Pw" firstAttribute="trailing" secondItem="iiU-un-y0z" secondAttribute="trailing" id="V3m-Eg-eqC"/>
-                            <constraint firstItem="iiU-un-y0z" firstAttribute="leading" secondItem="sHw-g3-4Pw" secondAttribute="leading" id="a9U-vL-rKC"/>
+                            <constraint firstItem="iiU-un-y0z" firstAttribute="leading" secondItem="sHw-g3-4Pw" secondAttribute="leading" constant="12" id="Go2-Qx-Rp6"/>
+                            <constraint firstItem="sHw-g3-4Pw" firstAttribute="trailing" secondItem="iiU-un-y0z" secondAttribute="trailing" constant="15" id="OPI-IE-tgR"/>
                             <constraint firstItem="iiU-un-y0z" firstAttribute="top" secondItem="xKK-zL-8un" secondAttribute="bottom" id="hH0-zm-jgK"/>
                             <constraint firstItem="xKK-zL-8un" firstAttribute="top" secondItem="sHw-g3-4Pw" secondAttribute="top" id="kdc-un-cuJ"/>
                             <constraint firstItem="sHw-g3-4Pw" firstAttribute="bottom" secondItem="iiU-un-y0z" secondAttribute="bottom" id="r48-8Y-kCt"/>

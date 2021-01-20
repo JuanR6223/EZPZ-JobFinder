@@ -11,23 +11,11 @@ import UIKit
 
 class JobClass {
     
-    var image: UIImage
-    var title: String
+    var result: Result
+    var isFavorite: Bool
     
-    init(image: UIImage, title: String) {
-        self.image = image
-        self.title = title
+    init(result: Result, favorite: Bool) {
+        self.result = result
+        self.isFavorite = favorite
     }
-}
-
-struct JobsList {
-    
-    static let job1 = UIImage(named: "Walgreens")
-    //static let job2 = UIImage(named: "Aldi")
-    static let job3 = UIImage(named: "Walmart")
-    static let job4 = UIImage(named: "Potbelly")
-    static let job5 = UIImage(named: "Shell Oil")
-    static let job6 = UIImage(named: "Coca Cola")
-    static let job7 = UIImage(named: "Denny's")
-
 }

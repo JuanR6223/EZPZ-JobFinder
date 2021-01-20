@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1801CDD524CE159A002733D7 /* MainJobsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1801CDD424CE159A002733D7 /* MainJobsPage.swift */; };
 		1801CDD724CE3198002733D7 /* YourProfilePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1801CDD624CE3198002733D7 /* YourProfilePage.swift */; };
 		1801CDD924CE36B1002733D7 /* GetInformedPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1801CDD824CE36B1002733D7 /* GetInformedPage.swift */; };
 		1801CE1D24D1192F002733D7 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1801CE1C24D1192F002733D7 /* Login.swift */; };
@@ -25,7 +24,6 @@
 		75EAE7A1E0F2CFC6362B2000 /* Pods_JobFinderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 416FC9B9C22ACBCCFDAD8A84 /* Pods_JobFinderTests.framework */; };
 		C0F856A24837AB69FEF271CC /* Pods_JobFinder_JobFinderUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDE416418368A335316315AE /* Pods_JobFinder_JobFinderUITests.framework */; };
 		F852AA912567448100856F93 /* SignInTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F852AA902567448100856F93 /* SignInTestViewController.swift */; };
-		F852AA98256AC41500856F93 /* JobsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F852AA96256AC41500856F93 /* JobsCollectionViewCell.swift */; };
 		F852AA9D256ED92900856F93 /* OrganizationsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F852AA9C256ED92900856F93 /* OrganizationsCollectionViewCell.swift */; };
 		F852AA9F256EDB0700856F93 /* OrganizationClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F852AA9E256EDB0700856F93 /* OrganizationClass.swift */; };
 		F867DD2925776D49000A14C9 /* OrganizationsDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F867DD2825776D49000A14C9 /* OrganizationsDetailTableViewController.swift */; };
@@ -61,7 +59,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1801CDD424CE159A002733D7 /* MainJobsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainJobsPage.swift; sourceTree = "<group>"; };
 		1801CDD624CE3198002733D7 /* YourProfilePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourProfilePage.swift; sourceTree = "<group>"; };
 		1801CDD824CE36B1002733D7 /* GetInformedPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetInformedPage.swift; sourceTree = "<group>"; };
 		1801CE1C24D1192F002733D7 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
@@ -91,7 +88,6 @@
 		EDAAE486766DF5F65846A854 /* Pods-JobFinder-JobFinderUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JobFinder-JobFinderUITests.debug.xcconfig"; path = "Target Support Files/Pods-JobFinder-JobFinderUITests/Pods-JobFinder-JobFinderUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		EDE416418368A335316315AE /* Pods_JobFinder_JobFinderUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JobFinder_JobFinderUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F852AA902567448100856F93 /* SignInTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInTestViewController.swift; sourceTree = "<group>"; };
-		F852AA96256AC41500856F93 /* JobsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsCollectionViewCell.swift; sourceTree = "<group>"; };
 		F852AA9C256ED92900856F93 /* OrganizationsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationsCollectionViewCell.swift; sourceTree = "<group>"; };
 		F852AA9E256EDB0700856F93 /* OrganizationClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationClass.swift; sourceTree = "<group>"; };
 		F867DD2825776D49000A14C9 /* OrganizationsDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationsDetailTableViewController.swift; sourceTree = "<group>"; };
@@ -166,9 +162,6 @@
 				186C3D5524C097B900AC13C1 /* SceneDelegate.swift */,
 				F852AA902567448100856F93 /* SignInTestViewController.swift */,
 				186C3D5724C097B900AC13C1 /* ViewController.swift */,
-				1801CDD424CE159A002733D7 /* MainJobsPage.swift */,
-				F852AA96256AC41500856F93 /* JobsCollectionViewCell.swift */,
-				F8CD359E256640EE0035F699 /* JobClass.swift */,
 				F8CD3598255E6E960035F699 /* WalgreensJobsTableViewController.swift */,
 				F852AA9E256EDB0700856F93 /* OrganizationClass.swift */,
 				F867DD2825776D49000A14C9 /* OrganizationsDetailTableViewController.swift */,
@@ -178,6 +171,7 @@
 				1801CE1C24D1192F002733D7 /* Login.swift */,
 				3FB5540F255CAB7600FACDB6 /* ProfileTableViewController.swift */,
 				F867DD84258BDA52000A14C9 /* NetworkManager.swift */,
+				F8CD359E256640EE0035F699 /* JobClass.swift */,
 				F867DD86258BDC6D000A14C9 /* Response.swift */,
 				3F4FAD5425B3CC0E006C23D4 /* TableViewCell.swift */,
 				F867DD82258BDA44000A14C9 /* JobsViewController.swift */,
@@ -517,11 +511,9 @@
 				F867DD85258BDA52000A14C9 /* NetworkManager.swift in Sources */,
 				3FB55410255CAB7600FACDB6 /* ProfileTableViewController.swift in Sources */,
 				F867DD89258BE109000A14C9 /* ClusterAnnotationView.swift in Sources */,
-				1801CDD524CE159A002733D7 /* MainJobsPage.swift in Sources */,
 				F8CD359F256640EE0035F699 /* JobClass.swift in Sources */,
 				F867DD83258BDA44000A14C9 /* JobsViewController.swift in Sources */,
 				F867DD87258BDC6D000A14C9 /* Response.swift in Sources */,
-				F852AA98256AC41500856F93 /* JobsCollectionViewCell.swift in Sources */,
 				186C3D5824C097B900AC13C1 /* ViewController.swift in Sources */,
 				3F4FAD5525B3CC0E006C23D4 /* TableViewCell.swift in Sources */,
 				1801CDD924CE36B1002733D7 /* GetInformedPage.swift in Sources */,
