@@ -20,6 +20,8 @@
 		186C3D7624C097B900AC13C1 /* JobFinderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186C3D7524C097B900AC13C1 /* JobFinderUITests.swift */; };
 		1A35FE7C37EC528DAB56E684 /* Pods_JobFinder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24C51DF761C8C73C7E45C5D5 /* Pods_JobFinder.framework */; };
 		3F4FAD5525B3CC0E006C23D4 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4FAD5425B3CC0E006C23D4 /* TableViewCell.swift */; };
+		3F4FAD7825B8E3D7006C23D4 /* JobPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4FAD7725B8E3D7006C23D4 /* JobPointAnnotation.swift */; };
+		3F4FAD7D25B8E6D8006C23D4 /* JobClusterAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F4FAD7C25B8E6D8006C23D4 /* JobClusterAnnotation.swift */; };
 		3FB55410255CAB7600FACDB6 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB5540F255CAB7600FACDB6 /* ProfileTableViewController.swift */; };
 		75EAE7A1E0F2CFC6362B2000 /* Pods_JobFinderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 416FC9B9C22ACBCCFDAD8A84 /* Pods_JobFinderTests.framework */; };
 		C0F856A24837AB69FEF271CC /* Pods_JobFinder_JobFinderUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDE416418368A335316315AE /* Pods_JobFinder_JobFinderUITests.framework */; };
@@ -80,6 +82,8 @@
 		24C51DF761C8C73C7E45C5D5 /* Pods_JobFinder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JobFinder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E6ABFD7996F98FBFF3C22EF /* Pods-JobFinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JobFinder.debug.xcconfig"; path = "Target Support Files/Pods-JobFinder/Pods-JobFinder.debug.xcconfig"; sourceTree = "<group>"; };
 		3F4FAD5425B3CC0E006C23D4 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		3F4FAD7725B8E3D7006C23D4 /* JobPointAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobPointAnnotation.swift; sourceTree = "<group>"; };
+		3F4FAD7C25B8E6D8006C23D4 /* JobClusterAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobClusterAnnotation.swift; sourceTree = "<group>"; };
 		3FB5540F255CAB7600FACDB6 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 		416FC9B9C22ACBCCFDAD8A84 /* Pods_JobFinderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JobFinderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B69CDF85FE266A11907BD6E /* Pods-JobFinderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JobFinderTests.release.xcconfig"; path = "Target Support Files/Pods-JobFinderTests/Pods-JobFinderTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -136,6 +140,7 @@
 		186C3D4724C097B900AC13C1 = {
 			isa = PBXGroup;
 			children = (
+				3F4FAD7725B8E3D7006C23D4 /* JobPointAnnotation.swift */,
 				186C3D5224C097B900AC13C1 /* JobFinder */,
 				186C3D6924C097B900AC13C1 /* JobFinderTests */,
 				186C3D7424C097B900AC13C1 /* JobFinderUITests */,
@@ -163,10 +168,6 @@
 				F852AA902567448100856F93 /* SignInTestViewController.swift */,
 				186C3D5724C097B900AC13C1 /* ViewController.swift */,
 				F8CD3598255E6E960035F699 /* WalgreensJobsTableViewController.swift */,
-				F852AA9E256EDB0700856F93 /* OrganizationClass.swift */,
-				F867DD2825776D49000A14C9 /* OrganizationsDetailTableViewController.swift */,
-				1801CDD824CE36B1002733D7 /* GetInformedPage.swift */,
-				F852AA9C256ED92900856F93 /* OrganizationsCollectionViewCell.swift */,
 				1801CDD624CE3198002733D7 /* YourProfilePage.swift */,
 				1801CE1C24D1192F002733D7 /* Login.swift */,
 				3FB5540F255CAB7600FACDB6 /* ProfileTableViewController.swift */,
@@ -180,12 +181,17 @@
 				F867DD8C258C0E8B000A14C9 /* DetailMapViewController.swift */,
 				F867DD88258BE109000A14C9 /* ClusterAnnotationView.swift */,
 				F867DD8A258BE112000A14C9 /* CycleAnnotationView.swift */,
+				F852AA9E256EDB0700856F93 /* OrganizationClass.swift */,
+				F852AA9C256ED92900856F93 /* OrganizationsCollectionViewCell.swift */,
+				1801CDD824CE36B1002733D7 /* GetInformedPage.swift */,
+				F867DD2825776D49000A14C9 /* OrganizationsDetailTableViewController.swift */,
 				F867DD90258D56D1000A14C9 /* ResumeViewController.swift */,
 				186C3D5924C097B900AC13C1 /* Main.storyboard */,
 				186C3D5C24C097B900AC13C1 /* Assets.xcassets */,
 				186C3D5E24C097B900AC13C1 /* LaunchScreen.storyboard */,
 				186C3D6124C097B900AC13C1 /* Info.plist */,
 				F8CD359A2565B8240035F699 /* GoogleService-Info.plist */,
+				3F4FAD7C25B8E6D8006C23D4 /* JobClusterAnnotation.swift */,
 			);
 			path = JobFinder;
 			sourceTree = "<group>";
@@ -510,6 +516,7 @@
 				F867DD8D258C0E8C000A14C9 /* DetailMapViewController.swift in Sources */,
 				F867DD85258BDA52000A14C9 /* NetworkManager.swift in Sources */,
 				3FB55410255CAB7600FACDB6 /* ProfileTableViewController.swift in Sources */,
+				3F4FAD7825B8E3D7006C23D4 /* JobPointAnnotation.swift in Sources */,
 				F867DD89258BE109000A14C9 /* ClusterAnnotationView.swift in Sources */,
 				F8CD359F256640EE0035F699 /* JobClass.swift in Sources */,
 				F867DD83258BDA44000A14C9 /* JobsViewController.swift in Sources */,
@@ -527,6 +534,7 @@
 				F852AA9D256ED92900856F93 /* OrganizationsCollectionViewCell.swift in Sources */,
 				F867DD8B258BE112000A14C9 /* CycleAnnotationView.swift in Sources */,
 				F867DD81258BDA3B000A14C9 /* BusinessTableViewController.swift in Sources */,
+				3F4FAD7D25B8E6D8006C23D4 /* JobClusterAnnotation.swift in Sources */,
 				F867DD91258D56D2000A14C9 /* ResumeViewController.swift in Sources */,
 				1801CDD724CE3198002733D7 /* YourProfilePage.swift in Sources */,
 				186C3D5624C097B900AC13C1 /* SceneDelegate.swift in Sources */,

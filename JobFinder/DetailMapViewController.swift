@@ -29,8 +29,4 @@ class DetailMapViewController: UIViewController, MKMapViewDelegate {
         detailMapView.setRegion(region, animated: true)
     }
 
-//    func centerToLocation (location: CLLocation) {
-//        let region = MKCoordinateRegion( center: detailMapView.userLocation.coordinate, latitudinalMeters: CLLocationDistance(exactly: 100000)!, longitudinalMeters: CLLocationDistance(exactly: 100000)!)
-//        detailMapView.setRegion(region, animated: true)
-//    }
 }

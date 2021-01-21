@@ -26,6 +26,7 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
     //favoritesListData
     var favoritesList = [JobClass]()
     
+    //var memberAnnotations: [JobPointAnnotation]?
     var memberAnnotations: [MKAnnotation]?
     var locationManager = CLLocationManager()
     
@@ -58,13 +59,15 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
                 let job = JobClass(result: result, favorite: false)
                 self.jobPosts.append(job)
             }
+            //var annotations = [JobPointAnnotation]()
             var annotations = [MKPointAnnotation]()
-            
             for post in self.jobPosts {
                 if let latitude = post.result.latitude, let longitude = post.result.longitude {
+                    //let annotation = JobPointAnnotation()
                     let annotation = MKPointAnnotation()
                     annotation.title = post.result.company.displayName
                     annotation.subtitle = post.result.title
+                    //annotation.job = post
                     annotation.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
                     annotations.append(annotation)
                 }
@@ -90,10 +93,9 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
             tableView.frame.origin = CGPoint(x: 0, y: 144)
             favoriteTitle.isHidden = false
             favoriteTitle.frame.origin = CGPoint(x: 0, y: 88)
-            noFavoriteLabel.isHidden = false
-
-            dataToDisplay = self.favoritesList
-            tableView.reloadData()
+            
+            dataToDisplay = favoritesList
+            updateFavorites()
         } else {
             mapView.isHidden = true
             tableView.isHidden = false
@@ -102,6 +104,7 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
             favoriteTitle.isHidden = true
             
             dataToDisplay = self.jobPosts
+            updateFavorites()
             tableView.reloadData()
         }
     }
@@ -150,8 +153,52 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
         mapView.setRegion(coordinateRegion, animated: true)
     }
     
+//    func GetAddressFromLocation() {
+//        let ceo: CLGeocoder = CLGeocoder()
+//        var addressString : String = ""
+//
+//        if let latitude = jobPosts.result.latitude, let longitude = jobPosts?.result.longitude {
+//            let loc: CLLocation = CLLocation(latitude: latitude, longitude: longitude)
+//            let annotation = MKPointAnnotation()
+//
+//            ceo.reverseGeocodeLocation(loc, completionHandler: { [self](placemarks, error) in
+//                if (error != nil) {
+//                    print("reverse geodcode fail: \(error!.localizedDescription)")
+//                }
+//
+//                let pm = placemarks![0]
+//
+//                if pm.subThoroughfare != nil {
+//                    addressString = addressString + pm.subThoroughfare! + " "
+//                }
+//                if pm.thoroughfare != nil {
+//                    addressString = addressString + pm.thoroughfare! + ", "
+//                }
+//                if pm.locality != nil {
+//                    addressString = addressString + pm.locality! + ", "
+//                }
+//                if let state = pm.administrativeArea {
+//                    addressString.append(state + ", ")
+//                }
+//                if pm.country != nil {
+//                    addressString = addressString + pm.country! + ", "
+//                }
+//                if pm.postalCode != nil {
+//                    addressString = addressString + pm.postalCode! + " "
+//                }
+//                annotation.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+//                annotation.title = .
+//                annotation.subtitle = addressString
+//            })
+//            annotations.append(annotation)
+//        }
+//    }
     
     //JobsTableView
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return dataToDisplay.count
@@ -161,46 +208,51 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as! TableViewCell
         let job = dataToDisplay[indexPath.row].result
-        
-        let dateCreated = job.created
-        let dateFormatterGet = DateFormatter()
-        dateFormatterGet.dateFormat = "yyyy-MM-ddTHH:mm:ssZ"
-        let dateFormatterPrint = DateFormatter()
-        dateFormatterPrint.dateFormat = "MMM dd,yyyy"
-
-        if let date = dateFormatterGet.date(from: dateCreated) {
-            cell.detailTextLabel?.attributedText = convertHTMLText(text: "\(job.title) " + " \(dateFormatterPrint.string(from: date))")
-        } else {
-            cell.detailTextLabel?.attributedText = convertHTMLText(text: "\(job.title) " + " \(job.created)")
-        }
+        let formatter4 = DateFormatter()
+        formatter4.dateFormat = "HH:mm E, d MMM y"
         
         cell.textLabel?.numberOfLines = 0
         cell.textLabel?.text = job.company.displayName
-        cell.detailTextLabel?.numberOfLines = 0
-        //cell.detailTextLabel?.attributedText = convertHTMLText(text: "\(job.title) " + " \(String(describing: dateFormatter.date(from: date)))")
-        cell.detailTextLabel?.font = UIFont(name: "Avenir Next Regular", size: 12.0)
-
+        cell.textLabel?.font = UIFont(name: "Avenir Next SemiBold", size: 18.0)
         
+        cell.detailTextLabel?.numberOfLines = 0
+        cell.detailTextLabel?.attributedText = convertHTMLText(text: "\(job.title) ")
+        cell.detailTextLabel?.font = UIFont(name: "Avenir Next Regular", size: 12.0)
+        
+        //cell.dateCreated.text = String(describing: formatter4.date(from: job.created))
+        cell.dateCreated.text = job.created
+
+        cell.dateCreated.font = UIFont(name: "Avenir Next Regular", size: 12.0)
+
         // assign the index of the youtuber to button tag
           cell.favoriteButton.tag = indexPath.row
           
           // call the subscribeTapped method when tapped
           cell.favoriteButton.addTarget(self, action: #selector(favoriteTapped(_:)), for: .touchUpInside)
         
+        if dataToDisplay[indexPath.row].isFavorite {
+            cell.favoriteButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+        } else {
+            cell.favoriteButton.setImage(UIImage(systemName: "star"), for: .normal)
+        }
+            
         return cell
     }
     
     @objc func favoriteTapped(_ sender: UIButton){
-        if segmentedControl.selectedSegmentIndex == 0 {
-            // use the tag of button as index
-            let job = jobPosts[sender.tag]
-              //favoritesList.append(job)
-            job.isFavorite = true
-        } else if segmentedControl.selectedSegmentIndex == 2 {
-
-            favoritesList.remove(at: sender.tag)
-            tableView.reloadData()
+        let job = jobPosts[sender.tag]
+        job.isFavorite = !job.isFavorite
+        updateFavorites()
+    }
+    
+    func updateFavorites() {
+        favoritesList.removeAll()
+        for jobPost in jobPosts {
+            if jobPost.isFavorite {
+                favoritesList.append(jobPost)
+            }
         }
+        tableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

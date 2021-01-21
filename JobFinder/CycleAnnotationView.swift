@@ -10,11 +10,20 @@ import MapKit
 class JobMarkerAnnotationView: MKMarkerAnnotationView {
 
     static let ReuseID = "jobAnnotation"
+    var job: JobClass?
 
     /// - Tag: ClusterIdentifier
     override init(annotation: MKAnnotation?, reuseIdentifier: String?) {
         super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)
         clusteringIdentifier = "job"
+    }
+    
+    init(annotation: MKAnnotation?, reuseIdentifier: String?, job: JobClass?) {
+        super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)
+
+        if let job = job {
+            self.job = job
+        }
     }
 
     required init?(coder aDecoder: NSCoder) {

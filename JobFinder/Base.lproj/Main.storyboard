@@ -635,14 +635,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Extracurricular Opportunities for High School Students" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ykt-N8-BNQ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Extracurricular Opportunities for High School Students in Chicago" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ykt-N8-BNQ">
                                 <rect key="frame" x="20" y="112" width="374" height="48"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="More Coming Soon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="slj-Ce-CqU">
+                                <rect key="frame" x="125" y="760" width="162" height="25"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fEN-yj-Efr">
-                                <rect key="frame" x="20" y="168" width="374" height="645"/>
+                                <rect key="frame" x="20" y="168" width="374" height="555"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ppm-VA-g6g">
                                     <size key="itemSize" width="130" height="130"/>
@@ -677,12 +683,16 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="ykt-N8-BNQ" firstAttribute="top" secondItem="2e6-ez-aFv" secondAttribute="top" constant="24" id="1LA-Gv-PFb"/>
+                            <constraint firstItem="slj-Ce-CqU" firstAttribute="top" secondItem="fEN-yj-Efr" secondAttribute="bottom" constant="37" id="4fa-nU-yFL"/>
+                            <constraint firstItem="slj-Ce-CqU" firstAttribute="leading" secondItem="2e6-ez-aFv" secondAttribute="leading" constant="125" id="6k3-7M-Sv3"/>
                             <constraint firstItem="2e6-ez-aFv" firstAttribute="trailing" secondItem="fEN-yj-Efr" secondAttribute="trailing" constant="20" id="6mk-5P-1ZP"/>
                             <constraint firstItem="2e6-ez-aFv" firstAttribute="trailing" secondItem="ykt-N8-BNQ" secondAttribute="trailing" constant="20" id="9HR-ih-82Y"/>
                             <constraint firstItem="fEN-yj-Efr" firstAttribute="top" secondItem="ykt-N8-BNQ" secondAttribute="bottom" constant="8" symbolic="YES" id="CpG-NQ-gxU"/>
                             <constraint firstItem="ykt-N8-BNQ" firstAttribute="leading" secondItem="2e6-ez-aFv" secondAttribute="leading" constant="20" id="SiO-CW-de4"/>
+                            <constraint firstItem="2e6-ez-aFv" firstAttribute="trailing" secondItem="slj-Ce-CqU" secondAttribute="trailing" constant="127" id="UFE-AX-zJR"/>
+                            <constraint firstItem="2e6-ez-aFv" firstAttribute="bottom" secondItem="fEN-yj-Efr" secondAttribute="bottom" constant="90" id="Uko-C0-f08"/>
                             <constraint firstItem="fEN-yj-Efr" firstAttribute="leading" secondItem="2e6-ez-aFv" secondAttribute="leading" constant="20" id="ZB9-H7-dqb"/>
-                            <constraint firstItem="fEN-yj-Efr" firstAttribute="bottom" secondItem="2e6-ez-aFv" secondAttribute="bottom" id="pnr-0E-H05"/>
+                            <constraint firstItem="2e6-ez-aFv" firstAttribute="bottom" secondItem="slj-Ce-CqU" secondAttribute="bottom" constant="28" id="mRY-Vb-oXs"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Programs &amp; Volunteering" id="fIq-GU-hOV"/>
@@ -1610,6 +1620,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jobs Near You" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0ZR-f9-m7A">
+                                <rect key="frame" x="13" y="426" width="387" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <searchBar contentMode="redraw" text="" translatesAutoresizingMaskIntoConstraints="NO" id="xKK-zL-8un">
                                 <rect key="frame" x="0.0" y="88" width="414" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -1618,22 +1635,22 @@
                                 <rect key="frame" x="12" y="144" width="387" height="669"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="reuseIdentifier" textLabel="NkX-Jr-8FI" detailTextLabel="dsp-Nm-M7y" style="IBUITableViewCellStyleSubtitle" id="PR4-uE-Ifo" customClass="TableViewCell" customModule="EZPZ__JobFinder" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="387" height="55.666667938232422"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="reuseIdentifier" textLabel="NkX-Jr-8FI" detailTextLabel="dsp-Nm-M7y" rowHeight="95" style="IBUITableViewCellStyleSubtitle" id="PR4-uE-Ifo" customClass="TableViewCell" customModule="EZPZ__JobFinder" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="387" height="95"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PR4-uE-Ifo" id="K2j-9a-IzJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="387" height="55.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="387" height="95"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NkX-Jr-8FI">
-                                                    <rect key="frame" x="20" y="8.9999999999999982" width="33" height="20.333333333333332"/>
+                                                    <rect key="frame" x="20" y="28" width="33" height="20.333333333333332"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dsp-Nm-M7y">
-                                                    <rect key="frame" x="19.999999999999996" y="31.333333333333332" width="43.666666666666664" height="14.333333333333334"/>
+                                                    <rect key="frame" x="19.999999999999996" y="51.333333333333329" width="43.666666666666664" height="14.333333333333334"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -1676,7 +1693,7 @@
                     <navigationItem key="navigationItem" id="aUh-ah-jdP">
                         <nil key="title"/>
                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="v6l-Mk-CuY">
-                            <rect key="frame" x="100" y="5.6666666666666679" width="214" height="33"/>
+                            <rect key="frame" x="57" y="5.6666666666666679" width="300" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
                                 <segment title="" image="list.bullet" catalog="system"/>
@@ -1765,7 +1782,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="eq2-go-b8T" kind="show" id="sjp-zA-lxq"/>
+                                    <segue destination="eq2-go-b8T" kind="show" id="t0d-ff-STn"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

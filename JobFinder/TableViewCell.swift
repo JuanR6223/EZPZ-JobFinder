@@ -10,33 +10,21 @@ import UIKit
 
 class TableViewCell: UITableViewCell {
     
-    var favorite = false
     var favoriteButton = UIButton(type: .system)
+    var dateCreated: UILabel!
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: .subtitle, reuseIdentifier: reuseIdentifier)
         
+        dateCreated = UILabel(frame: CGRect(x: 20, y: 64, width: 200, height: 14))
+        dateCreated.textColor = .black
+        
         favoriteButton.setImage(UIImage(systemName: "star"), for: .normal)
-        favoriteButton.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+        favoriteButton.frame = CGRect(x: 10, y: 0, width: 30, height: 30)
         favoriteButton.tintColor = .orange
         accessoryView = favoriteButton
-        
-        favoriteButton.addTarget(self, action: #selector(handleMarkAsFavorite), for: .touchUpInside)
-    }
-    
-    @objc private func handleMarkAsFavorite() {
-        
-        if favorite == false {
-            favoriteButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
-            print("mark as favorite")
-
-            favorite = !favorite
-        } else if favorite == true {
-            favoriteButton.setImage(UIImage(systemName: "star"), for: .normal)
-            print("not favorite")
-
-            favorite = !favorite
-        }
+                
+        addSubview(dateCreated)
     }
     
     required init?(coder: NSCoder) {

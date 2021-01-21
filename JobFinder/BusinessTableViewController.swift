@@ -44,7 +44,8 @@ class BusinessTableViewController: UITableViewController, SFSafariViewController
         
         jobCreatedLabel.text = job?.result.created
         jobCreatedLabel.attributedText = convertHTMLText(text: job!.result.created, attritbutedText: &(jobCreatedLabel.attributedText)!)
-        jobCreatedLabel.font = UIFont(name: "Avenir Next Regular", size: 16.0)
+        jobCreatedLabel.font = UIFont(name: "Avenir Next Regular", size: 12.0)
+        jobCreatedLabel.textColor = .gray
         
         jobLabelLabel.attributedText = convertHTMLText(text: job!.result.location.displayName, attritbutedText: &(jobLabelLabel.attributedText)!)
         jobLabelLabel.font = UIFont(name: "Avenir Next Regular", size: 16.0)
@@ -84,13 +85,6 @@ class BusinessTableViewController: UITableViewController, SFSafariViewController
                 }
                 
                 let pm = placemarks![0]
-//                print(pm.country!)
-//                print(pm.locality!)
-//                print(pm.subLocality!)
-//                print(pm.thoroughfare!)
-//                print(pm.postalCode!)
-//                print(pm.subThoroughfare!)
-//                print(pm.administrativeArea)
                 
                 if pm.subThoroughfare != nil {
                     addressString = addressString + pm.subThoroughfare! + " "

@@ -12,6 +12,7 @@ import MapKit
 class ClusterDetailTableViewController: UITableViewController {
 
     var memberAnnotations = [MKAnnotation]()
+    //var memberAnnotations = [JobPointAnnotation]()
     var jobs = [Result]()
     
     override func viewDidLoad() {
@@ -38,7 +39,7 @@ class ClusterDetailTableViewController: UITableViewController {
         cell.textLabel!.text = annotation.title as? String
         cell.detailTextLabel?.attributedText = convertHTMLText(text: annotation.subtitle!!)
         cell.detailTextLabel?.font = UIFont(name: "Avenir Next Regular", size: 12.0)
-
+        
         
         return cell
     }
