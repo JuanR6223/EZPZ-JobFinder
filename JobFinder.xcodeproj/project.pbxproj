@@ -140,7 +140,6 @@
 		186C3D4724C097B900AC13C1 = {
 			isa = PBXGroup;
 			children = (
-				3F4FAD7725B8E3D7006C23D4 /* JobPointAnnotation.swift */,
 				186C3D5224C097B900AC13C1 /* JobFinder */,
 				186C3D6924C097B900AC13C1 /* JobFinderTests */,
 				186C3D7424C097B900AC13C1 /* JobFinderUITests */,
@@ -171,8 +170,10 @@
 				1801CDD624CE3198002733D7 /* YourProfilePage.swift */,
 				1801CE1C24D1192F002733D7 /* Login.swift */,
 				3FB5540F255CAB7600FACDB6 /* ProfileTableViewController.swift */,
-				F867DD84258BDA52000A14C9 /* NetworkManager.swift */,
 				F8CD359E256640EE0035F699 /* JobClass.swift */,
+				3F4FAD7725B8E3D7006C23D4 /* JobPointAnnotation.swift */,
+				3F4FAD7C25B8E6D8006C23D4 /* JobClusterAnnotation.swift */,
+				F867DD84258BDA52000A14C9 /* NetworkManager.swift */,
 				F867DD86258BDC6D000A14C9 /* Response.swift */,
 				3F4FAD5425B3CC0E006C23D4 /* TableViewCell.swift */,
 				F867DD82258BDA44000A14C9 /* JobsViewController.swift */,
@@ -191,7 +192,6 @@
 				186C3D5E24C097B900AC13C1 /* LaunchScreen.storyboard */,
 				186C3D6124C097B900AC13C1 /* Info.plist */,
 				F8CD359A2565B8240035F699 /* GoogleService-Info.plist */,
-				3F4FAD7C25B8E6D8006C23D4 /* JobClusterAnnotation.swift */,
 			);
 			path = JobFinder;
 			sourceTree = "<group>";
@@ -719,7 +719,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.EZPZ.JobFinder;
 				PRODUCT_NAME = "EZPZ: JobFinder";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -741,7 +741,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.EZPZ.JobFinder;
 				PRODUCT_NAME = "EZPZ: JobFinder";
 				PROVISIONING_PROFILE_SPECIFIER = "";

@@ -642,7 +642,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="More Coming Soon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="slj-Ce-CqU">
-                                <rect key="frame" x="125" y="760" width="162" height="25"/>
+                                <rect key="frame" x="126" y="760" width="162" height="25"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -684,12 +684,11 @@
                         <constraints>
                             <constraint firstItem="ykt-N8-BNQ" firstAttribute="top" secondItem="2e6-ez-aFv" secondAttribute="top" constant="24" id="1LA-Gv-PFb"/>
                             <constraint firstItem="slj-Ce-CqU" firstAttribute="top" secondItem="fEN-yj-Efr" secondAttribute="bottom" constant="37" id="4fa-nU-yFL"/>
-                            <constraint firstItem="slj-Ce-CqU" firstAttribute="leading" secondItem="2e6-ez-aFv" secondAttribute="leading" constant="125" id="6k3-7M-Sv3"/>
                             <constraint firstItem="2e6-ez-aFv" firstAttribute="trailing" secondItem="fEN-yj-Efr" secondAttribute="trailing" constant="20" id="6mk-5P-1ZP"/>
                             <constraint firstItem="2e6-ez-aFv" firstAttribute="trailing" secondItem="ykt-N8-BNQ" secondAttribute="trailing" constant="20" id="9HR-ih-82Y"/>
                             <constraint firstItem="fEN-yj-Efr" firstAttribute="top" secondItem="ykt-N8-BNQ" secondAttribute="bottom" constant="8" symbolic="YES" id="CpG-NQ-gxU"/>
+                            <constraint firstItem="slj-Ce-CqU" firstAttribute="centerX" secondItem="yJj-vC-ESG" secondAttribute="centerX" id="GwJ-zB-o5V"/>
                             <constraint firstItem="ykt-N8-BNQ" firstAttribute="leading" secondItem="2e6-ez-aFv" secondAttribute="leading" constant="20" id="SiO-CW-de4"/>
-                            <constraint firstItem="2e6-ez-aFv" firstAttribute="trailing" secondItem="slj-Ce-CqU" secondAttribute="trailing" constant="127" id="UFE-AX-zJR"/>
                             <constraint firstItem="2e6-ez-aFv" firstAttribute="bottom" secondItem="fEN-yj-Efr" secondAttribute="bottom" constant="90" id="Uko-C0-f08"/>
                             <constraint firstItem="fEN-yj-Efr" firstAttribute="leading" secondItem="2e6-ez-aFv" secondAttribute="leading" constant="20" id="ZB9-H7-dqb"/>
                             <constraint firstItem="2e6-ez-aFv" firstAttribute="bottom" secondItem="slj-Ce-CqU" secondAttribute="bottom" constant="28" id="mRY-Vb-oXs"/>
@@ -1668,6 +1667,11 @@
                                     <outlet property="delegate" destination="k7a-MV-p9b" id="6dw-Yn-aTa"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0QY-7e-VUE">
+                                <rect key="frame" x="400" y="138" width="70" height="675"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                             <mapView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="KCH-3Y-6gm">
                                 <rect key="frame" x="0.0" y="88" width="414" height="722"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1677,7 +1681,7 @@
                             </mapView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="sHw-g3-4Pw"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="xKK-zL-8un" firstAttribute="trailing" secondItem="sHw-g3-4Pw" secondAttribute="trailing" id="7Sj-19-uQy"/>
                             <constraint firstItem="xKK-zL-8un" firstAttribute="leading" secondItem="sHw-g3-4Pw" secondAttribute="leading" id="83b-cB-GiL"/>
@@ -1706,6 +1710,7 @@
                         </segmentedControl>
                     </navigationItem>
                     <connections>
+                        <outlet property="blockView" destination="0QY-7e-VUE" id="5ZN-rP-iX6"/>
                         <outlet property="favoriteTitle" destination="jxc-u1-6ok" id="T8S-Xd-h5m"/>
                         <outlet property="mapView" destination="KCH-3Y-6gm" id="gsq-XJ-d6s"/>
                         <outlet property="noFavoriteLabel" destination="k8y-Sm-5J0" id="Xlz-8f-pAo"/>

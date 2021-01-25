@@ -16,6 +16,7 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var search: UISearchBar!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var favoriteTitle: UILabel!
+    @IBOutlet weak var blockView: UIView!
     @IBOutlet weak var noFavoriteLabel: UILabel!
     
     var jobPosts = [JobClass]()
@@ -86,6 +87,7 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
             tableView.isHidden = true
             search.isHidden = true
             favoriteTitle.isHidden = true
+//            blockView.isHidden = true
         } else if sender.selectedSegmentIndex == 2{
             mapView.isHidden = true
             tableView.isHidden = false
@@ -93,19 +95,22 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
             tableView.frame.origin = CGPoint(x: 0, y: 144)
             favoriteTitle.isHidden = false
             favoriteTitle.frame.origin = CGPoint(x: 0, y: 88)
-            
+//            blockView.isHidden = false
+//            blockView.frame.origin = CGPoint(x: 344, y: 138)
+    
             dataToDisplay = favoritesList
             updateFavorites()
         } else {
             mapView.isHidden = true
+//            blockView.isHidden = true
+//            blockView.frame.origin = CGPoint(x: 400, y: 138)
             tableView.isHidden = false
             tableView.frame.origin = CGPoint(x: 0, y: 144)
             search.isHidden = false
             favoriteTitle.isHidden = true
-            
+
             dataToDisplay = self.jobPosts
             updateFavorites()
-            tableView.reloadData()
         }
     }
 
@@ -152,47 +157,6 @@ class JobsViewController: UIViewController, UITableViewDelegate, UITableViewData
         let coordinateRegion = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
         mapView.setRegion(coordinateRegion, animated: true)
     }
-    
-//    func GetAddressFromLocation() {
-//        let ceo: CLGeocoder = CLGeocoder()
-//        var addressString : String = ""
-//
-//        if let latitude = jobPosts.result.latitude, let longitude = jobPosts?.result.longitude {
-//            let loc: CLLocation = CLLocation(latitude: latitude, longitude: longitude)
-//            let annotation = MKPointAnnotation()
-//
-//            ceo.reverseGeocodeLocation(loc, completionHandler: { [self](placemarks, error) in
-//                if (error != nil) {
-//                    print("reverse geodcode fail: \(error!.localizedDescription)")
-//                }
-//
-//                let pm = placemarks![0]
-//
-//                if pm.subThoroughfare != nil {
-//                    addressString = addressString + pm.subThoroughfare! + " "
-//                }
-//                if pm.thoroughfare != nil {
-//                    addressString = addressString + pm.thoroughfare! + ", "
-//                }
-//                if pm.locality != nil {
-//                    addressString = addressString + pm.locality! + ", "
-//                }
-//                if let state = pm.administrativeArea {
-//                    addressString.append(state + ", ")
-//                }
-//                if pm.country != nil {
-//                    addressString = addressString + pm.country! + ", "
-//                }
-//                if pm.postalCode != nil {
-//                    addressString = addressString + pm.postalCode! + " "
-//                }
-//                annotation.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-//                annotation.title = .
-//                annotation.subtitle = addressString
-//            })
-//            annotations.append(annotation)
-//        }
-//    }
     
     //JobsTableView
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
